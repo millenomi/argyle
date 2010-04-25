@@ -30,13 +30,21 @@ uint64_t ILObject::retainCount() {
 	return _retainCount;
 }
 
-void* const ILObjectClassIdentity = (void*) "ILObject";
+
+static char ILObjectClassIdentityPointedLocation = 0;
+void* const ILObjectClassIdentity = &ILObjectClassIdentityPointedLocation;
+
 void* ILObject::classIdentity() {
 	return ILObjectClassIdentity;
 }
 
+
 bool ILObject::equals(ILObject* o) {
 	return this == o;
+}
+
+uint64_t ILObject::hash() {
+	return (uint64_t) this;
 }
 
 
@@ -49,3 +57,4 @@ void ILRelease(ILObject* o) {
 	if (o->release())
 		delete o;
 }
+

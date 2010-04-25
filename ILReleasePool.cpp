@@ -47,9 +47,9 @@ ILReleasePool* ILCurrentReleasePool() {
 	return topmostPool;
 }
 
-//void* ILReleaseLater(ILObject* o) {
-//	if (o != NULL)
-//		ILCurrentReleasePool()->addObject(o);
-//	
-//	return o;
-//}
+ILObject* ILReleaseLater(ILObject* o) {
+	if (o != NULL)
+		ILCurrentReleasePool()->addObject(o);
+	
+	return o;
+}

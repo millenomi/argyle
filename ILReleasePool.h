@@ -31,15 +31,6 @@ private:
 
 
 extern ILReleasePool* ILCurrentReleasePool();
-
-template <class T>
-T ILReleaseLater(T o) {
-	if (o != NULL)
-		ILCurrentReleasePool()->addObject((ILObject*) o);
-	
-	return o;
-}
-
-//extern void* ILReleaseLater(ILObject* o);
+extern ILObject* ILReleaseLater(ILObject* o);
 
 #endif

@@ -70,7 +70,7 @@ public:
 	{
 		ILReleasePool pool;		
 		ReportOnDeath* d = new ReportOnDeath(&dead);
-		ReportOnDeath* d2 = ILReleaseLater(d);
+		ReportOnDeath* d2 = (ReportOnDeath*) ILReleaseLater(d);
 		STAssertTrue(d != NULL, @"d was constructed");
 		STAssertTrue(d2 == d, @"ILReleaseLater() returned d");
 		

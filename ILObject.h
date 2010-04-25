@@ -21,10 +21,18 @@ public:
 	virtual bool release();
 	virtual uint64_t retainCount();
 	
-	// a class identity token identifies objects of a given class — that is, each class should have one. It should be unique, like a constant string.
+	// a class identity token identifies objects of a given class — that is, each class should have one. It must be a unique pointer — one that is guaranteed different for each class and can be compared with the C == operator.
+
+	// example of producing a unique pointer:
+	// static int x = 0;
+	// void* const ILSomeClassIdentity = &x; // this is an appropriate class identity pointer.
 	virtual void* classIdentity();
-	
+
+	// the default implementation returns true if the pointer value of o is equal to the pointer value of this.
 	virtual bool equals(ILObject* o);
+	
+	// the default implementation returns the value of the 'this' pointer as an integer.
+	virtual uint64_t hash();
 	
 private:
 	uint64_t _retainCount;
