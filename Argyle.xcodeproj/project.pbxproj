@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		154BD8AE1184773500A7FCA2 /* ILObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 154BD8AC1184773500A7FCA2 /* ILObject.h */; };
+		154BD8AF1184773500A7FCA2 /* ILObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BD8AD1184773500A7FCA2 /* ILObject.cpp */; };
+		154BD8DB118478E800A7FCA2 /* ILObjectTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 154BD8D9118478E800A7FCA2 /* ILObjectTest.h */; };
+		154BD8E81184798300A7FCA2 /* ILObjectTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 154BD8DA118478E800A7FCA2 /* ILObjectTest.mm */; };
+		154BD8F411847A4C00A7FCA2 /* ILObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BD8AD1184773500A7FCA2 /* ILObject.cpp */; };
+		154BD90011847AEB00A7FCA2 /* ILReleasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 154BD8FE11847AEB00A7FCA2 /* ILReleasePool.h */; };
+		154BD90111847AEB00A7FCA2 /* ILReleasePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BD8FF11847AEB00A7FCA2 /* ILReleasePool.cpp */; };
+		154BD90711847CEB00A7FCA2 /* ILReleasePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BD8FF11847AEB00A7FCA2 /* ILReleasePool.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		154BD8D4118478B700A7FCA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 154BD8CE118478A900A7FCA2 /* Argyle-Test */;
+			remoteInfo = "Argyle-Test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		154BD8AC1184773500A7FCA2 /* ILObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILObject.h; sourceTree = "<group>"; };
+		154BD8AD1184773500A7FCA2 /* ILObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILObject.cpp; sourceTree = "<group>"; };
+		154BD8CF118478A900A7FCA2 /* Argyle-Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argyle-Test.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		154BD8D0118478AA00A7FCA2 /* Argyle-Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Argyle-Test-Info.plist"; sourceTree = "<group>"; };
+		154BD8D9118478E800A7FCA2 /* ILObjectTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILObjectTest.h; sourceTree = "<group>"; };
+		154BD8DA118478E800A7FCA2 /* ILObjectTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILObjectTest.mm; sourceTree = "<group>"; };
+		154BD8FE11847AEB00A7FCA2 /* ILReleasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILReleasePool.h; sourceTree = "<group>"; };
+		154BD8FF11847AEB00A7FCA2 /* ILReleasePool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILReleasePool.cpp; sourceTree = "<group>"; };
+		32BAE0B70371A74B00C91783 /* Argyle_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argyle_Prefix.pch; sourceTree = "<group>"; };
+		5073E0C609E734A800EC74B6 /* ArgyleProj.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = ArgyleProj.xcconfig; sourceTree = "<group>"; };
+		5073E0C709E734A800EC74B6 /* ArgyleTarget.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = ArgyleTarget.xcconfig; sourceTree = "<group>"; };
+		D2AAC09D05546B4700DB518D /* libArgyle.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libArgyle.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		154BD8CC118478A900A7FCA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2AAC09B05546B4700DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DDFF38A45A11DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC09D05546B4700DB518D /* libArgyle.dylib */,
+				154BD8CF118478A900A7FCA2 /* Argyle-Test.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* Argyle */ = {
+			isa = PBXGroup;
+			children = (
+				5073E0CA09E734BC00EC74B6 /* Configuration Files */,
+				08FB77ACFE841707C02AAC07 /* Source */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DDFF38A45A11DB9C8B /* Products */,
+				154BD8D0118478AA00A7FCA2 /* Argyle-Test-Info.plist */,
+			);
+			name = Argyle;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		08FB77ACFE841707C02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				32BAE0B70371A74B00C91783 /* Argyle_Prefix.pch */,
+				154BD8D8118478DA00A7FCA2 /* ILObject */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		154BD8D8118478DA00A7FCA2 /* ILObject */ = {
+			isa = PBXGroup;
+			children = (
+				154BD8AC1184773500A7FCA2 /* ILObject.h */,
+				154BD8AD1184773500A7FCA2 /* ILObject.cpp */,
+				154BD8D9118478E800A7FCA2 /* ILObjectTest.h */,
+				154BD8DA118478E800A7FCA2 /* ILObjectTest.mm */,
+				154BD8FE11847AEB00A7FCA2 /* ILReleasePool.h */,
+				154BD8FF11847AEB00A7FCA2 /* ILReleasePool.cpp */,
+			);
+			name = ILObject;
+			sourceTree = "<group>";
+		};
+		5073E0CA09E734BC00EC74B6 /* Configuration Files */ = {
+			isa = PBXGroup;
+			children = (
+				5073E0C609E734A800EC74B6 /* ArgyleProj.xcconfig */,
+				5073E0C709E734A800EC74B6 /* ArgyleTarget.xcconfig */,
+			);
+			name = "Configuration Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC09905546B4700DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154BD8AE1184773500A7FCA2 /* ILObject.h in Headers */,
+				154BD8DB118478E800A7FCA2 /* ILObjectTest.h in Headers */,
+				154BD90011847AEB00A7FCA2 /* ILReleasePool.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		154BD8CE118478A900A7FCA2 /* Argyle-Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 154BD8D3118478AA00A7FCA2 /* Build configuration list for PBXNativeTarget "Argyle-Test" */;
+			buildPhases = (
+				154BD8CA118478A900A7FCA2 /* Resources */,
+				154BD8CB118478A900A7FCA2 /* Sources */,
+				154BD8CC118478A900A7FCA2 /* Frameworks */,
+				154BD8CD118478A900A7FCA2 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Argyle-Test";
+			productName = "Argyle-Test";
+			productReference = 154BD8CF118478A900A7FCA2 /* Argyle-Test.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		D2AAC09C05546B4700DB518D /* Argyle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB916008733D950010E9CD /* Build configuration list for PBXNativeTarget "Argyle" */;
+			buildPhases = (
+				D2AAC09905546B4700DB518D /* Headers */,
+				D2AAC09B05546B4700DB518D /* Frameworks */,
+				D2AAC09A05546B4700DB518D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				154BD8D5118478B700A7FCA2 /* PBXTargetDependency */,
+			);
+			name = Argyle;
+			productName = libArgyle;
+			productReference = D2AAC09D05546B4700DB518D /* libArgyle.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB916408733D950010E9CD /* Build configuration list for PBXProject "Argyle" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* Argyle */;
+			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC09C05546B4700DB518D /* Argyle */,
+				154BD8CE118478A900A7FCA2 /* Argyle-Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		154BD8CA118478A900A7FCA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		154BD8CD118478A900A7FCA2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		154BD8CB118478A900A7FCA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154BD8E81184798300A7FCA2 /* ILObjectTest.mm in Sources */,
+				154BD8F411847A4C00A7FCA2 /* ILObject.cpp in Sources */,
+				154BD90711847CEB00A7FCA2 /* ILReleasePool.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2AAC09A05546B4700DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154BD8AF1184773500A7FCA2 /* ILObject.cpp in Sources */,
+				154BD90111847AEB00A7FCA2 /* ILReleasePool.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		154BD8D5118478B700A7FCA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 154BD8CE118478A900A7FCA2 /* Argyle-Test */;
+			targetProxy = 154BD8D4118478B700A7FCA2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		154BD8D1118478AA00A7FCA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Argyle_Prefix.pch;
+				INFOPLIST_FILE = "Argyle-Test-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Argyle-Test";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		154BD8D2118478AA00A7FCA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Argyle_Prefix.pch;
+				INFOPLIST_FILE = "Argyle-Test-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Argyle-Test";
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		1DEB916108733D950010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5073E0C709E734A800EC74B6 /* ArgyleTarget.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Argyle_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+			};
+			name = Debug;
+		};
+		1DEB916208733D950010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5073E0C709E734A800EC74B6 /* ArgyleTarget.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Argyle_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				STRIP_INSTALLED_PRODUCT = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		1DEB916508733D950010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5073E0C609E734A800EC74B6 /* ArgyleProj.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		1DEB916608733D950010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5073E0C609E734A800EC74B6 /* ArgyleProj.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		154BD8D3118478AA00A7FCA2 /* Build configuration list for PBXNativeTarget "Argyle-Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				154BD8D1118478AA00A7FCA2 /* Debug */,
+				154BD8D2118478AA00A7FCA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB916008733D950010E9CD /* Build configuration list for PBXNativeTarget "Argyle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB916108733D950010E9CD /* Debug */,
+				1DEB916208733D950010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB916408733D950010E9CD /* Build configuration list for PBXProject "Argyle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB916508733D950010E9CD /* Debug */,
+				1DEB916608733D950010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

@@ -1,0 +1,13 @@
+//
+// Prefix header for all source files of the 'Argyle' target in the 'Argyle' project.
+//
+
+
+#include <iostream>
+
+#if __OBJC__
+	#import <Cocoa/Cocoa.h>
+#endif
+
+#define ILDebugTrap(x) do { int x = 0; while (!x) sleep(1); } while (0)
+
