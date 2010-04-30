@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15015CA6118AE35400972828 /* ILLinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15015CA5118AE35400972828 /* ILLinkedList.cpp */; };
+		15015D5F118B2FFD00972828 /* ILLinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15015CA5118AE35400972828 /* ILLinkedList.cpp */; };
+		15015D6C118B301B00972828 /* ILLinkedListTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15015D6B118B301B00972828 /* ILLinkedListTest.mm */; };
+		15015E3D118B3ECD00972828 /* ILList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15015E3C118B3ECD00972828 /* ILList.cpp */; };
+		15015E3E118B3ECD00972828 /* ILList.h in Headers */ = {isa = PBXBuildFile; fileRef = 15015E3B118B3ECD00972828 /* ILList.h */; };
+		15015E3F118B3ECD00972828 /* ILList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15015E3C118B3ECD00972828 /* ILList.cpp */; };
+		15015E53118B41E200972828 /* ILListTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15015E52118B41E200972828 /* ILListTest.mm */; };
+		15015E54118B41E200972828 /* ILListTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 15015E51118B41E200972828 /* ILListTest.h */; };
 		154BD8AE1184773500A7FCA2 /* ILObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 154BD8AC1184773500A7FCA2 /* ILObject.h */; };
 		154BD8AF1184773500A7FCA2 /* ILObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BD8AD1184773500A7FCA2 /* ILObject.cpp */; };
 		154BD8DB118478E800A7FCA2 /* ILObjectTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 154BD8D9118478E800A7FCA2 /* ILObjectTest.h */; };
@@ -32,12 +40,20 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 154BD8CE118478A900A7FCA2 /* Argyle-Test */;
+			remoteGlobalIDString = 154BD8CE118478A900A7FCA2;
 			remoteInfo = "Argyle-Test";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15015CA4118AE35400972828 /* ILLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILLinkedList.h; sourceTree = "<group>"; };
+		15015CA5118AE35400972828 /* ILLinkedList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILLinkedList.cpp; sourceTree = "<group>"; };
+		15015D6A118B301B00972828 /* ILLinkedListTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILLinkedListTest.h; sourceTree = "<group>"; };
+		15015D6B118B301B00972828 /* ILLinkedListTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILLinkedListTest.mm; sourceTree = "<group>"; };
+		15015E3B118B3ECD00972828 /* ILList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILList.h; sourceTree = "<group>"; };
+		15015E3C118B3ECD00972828 /* ILList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILList.cpp; sourceTree = "<group>"; };
+		15015E51118B41E200972828 /* ILListTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILListTest.h; sourceTree = "<group>"; };
+		15015E52118B41E200972828 /* ILListTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILListTest.mm; sourceTree = "<group>"; };
 		154BD8AC1184773500A7FCA2 /* ILObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILObject.h; sourceTree = "<group>"; };
 		154BD8AD1184773500A7FCA2 /* ILObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILObject.cpp; sourceTree = "<group>"; };
 		154BD8CF118478A900A7FCA2 /* Argyle-Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argyle-Test.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,12 +127,36 @@
 			isa = PBXGroup;
 			children = (
 				32BAE0B70371A74B00C91783 /* Argyle_Prefix.pch */,
+				15015E3A118B3EBB00972828 /* List */,
+				15015CA3118AE34900972828 /* Basics */,
 				154BDAD31184912D00A7FCA2 /* Number */,
 				154BDA491184874600A7FCA2 /* Data */,
 				154BD8D8118478DA00A7FCA2 /* ILObject */,
 				154BDA501184877E00A7FCA2 /* Argyle.h */,
 			);
 			name = Source;
+			sourceTree = "<group>";
+		};
+		15015CA3118AE34900972828 /* Basics */ = {
+			isa = PBXGroup;
+			children = (
+				15015CA4118AE35400972828 /* ILLinkedList.h */,
+				15015CA5118AE35400972828 /* ILLinkedList.cpp */,
+				15015D6A118B301B00972828 /* ILLinkedListTest.h */,
+				15015D6B118B301B00972828 /* ILLinkedListTest.mm */,
+			);
+			name = Basics;
+			sourceTree = "<group>";
+		};
+		15015E3A118B3EBB00972828 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				15015E3B118B3ECD00972828 /* ILList.h */,
+				15015E3C118B3ECD00972828 /* ILList.cpp */,
+				15015E51118B41E200972828 /* ILListTest.h */,
+				15015E52118B41E200972828 /* ILListTest.mm */,
+			);
+			name = List;
 			sourceTree = "<group>";
 		};
 		154BD8D8118478DA00A7FCA2 /* ILObject */ = {
@@ -177,6 +217,8 @@
 				154BDA511184877E00A7FCA2 /* Argyle.h in Headers */,
 				154BDA8D11848CF200A7FCA2 /* ILDataTest.h in Headers */,
 				154BDAD61184914900A7FCA2 /* ILNumber.h in Headers */,
+				15015E3E118B3ECD00972828 /* ILList.h in Headers */,
+				15015E54118B41E200972828 /* ILListTest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +318,10 @@
 				154BDA8F11848CF200A7FCA2 /* ILDataTest.mm in Sources */,
 				154BDAD81184914900A7FCA2 /* ILNumber.cpp in Sources */,
 				154BDAEE1184945A00A7FCA2 /* ILNumberTest.mm in Sources */,
+				15015CA6118AE35400972828 /* ILLinkedList.cpp in Sources */,
+				15015D6C118B301B00972828 /* ILLinkedListTest.mm in Sources */,
+				15015E3D118B3ECD00972828 /* ILList.cpp in Sources */,
+				15015E53118B41E200972828 /* ILListTest.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +333,8 @@
 				154BD90111847AEB00A7FCA2 /* ILReleasePool.cpp in Sources */,
 				154BDA4D1184875000A7FCA2 /* ILData.cpp in Sources */,
 				154BDAD71184914900A7FCA2 /* ILNumber.cpp in Sources */,
+				15015D5F118B2FFD00972828 /* ILLinkedList.cpp in Sources */,
+				15015E3F118B3ECD00972828 /* ILList.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +362,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Argyle_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				INFOPLIST_FILE = "Argyle-Test-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (

@@ -3,11 +3,13 @@
 //
 
 
-#include <iostream>
-
 #if __OBJC__
 	#import <Cocoa/Cocoa.h>
 #endif
 
+#if DEBUG
 #define ILDebugTrap(x) do { int x = 0; while (!x) sleep(1); } while (0)
+#else
+#define ILDebugTrap(x) _ERROR__DISABLE_DEBUG_TRAPS_WHEN_BUILDING_FOR_RELEASE_
+#endif
 

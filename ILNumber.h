@@ -15,6 +15,7 @@
 enum {
 	kILNumberInt64Type = 0,
 	kILNumberDoubleType,
+	kILNumberBoolType,
 };
 typedef uint32_t ILNumberType;
 
@@ -22,6 +23,7 @@ class ILNumber : public ILObject {
 public:
 	ILNumber(int integerValue); // convenience, casts to int64_t.
 	
+	ILNumber(bool booleanValue);
 	ILNumber(int64_t integerValue);
 	ILNumber(double doubleValue);
 	
@@ -30,6 +32,7 @@ public:
 	
 	int64_t integerValue();
 	double doubleValue();
+	bool booleanValue();
 	
 	// ILObject overrides.
 	virtual void* classIdentity();
@@ -41,6 +44,7 @@ private:
 	union {
 		int64_t integerValue;
 		double doubleValue;
+		bool booleanValue;
 	} _value;
 };
 

@@ -8,6 +8,7 @@
  */
 
 #include "ILNumber.h"
+#include <stdlib.h>
 
 static char ILNumberIdentityValue = 0;
 void* const ILNumberClassIdentity = &ILNumberIdentityValue;
@@ -30,6 +31,8 @@ bool ILNumber::equals(ILObject* o) {
 			return this->integerValue() == n->integerValue();
 		case kILNumberDoubleType:
 			return this->doubleValue() == n->doubleValue();
+		case kILNumberBoolType:
+			return this->booleanValue() == n->booleanValue();
 		default:
 			return false;
 	}
@@ -58,6 +61,11 @@ ILNumber::ILNumber(double i) {
 	_value.doubleValue = i;
 }
 
+ILNumber::ILNumber(bool b) {
+	_type = kILNumberBoolType;
+	_value.booleanValue = b;
+}
+
 ILNumberType ILNumber::type() { return _type; }
 
 // ~~~
@@ -68,6 +76,8 @@ int64_t ILNumber::integerValue() {
 			return _value.integerValue;
 		case kILNumberDoubleType:
 			return (int64_t) _value.doubleValue;
+		case kILNumberBoolType:
+			return _value.booleanValue? 1 : 0;
 		default:
 			return 0;
 	}
@@ -79,8 +89,22 @@ double ILNumber::doubleValue() {
 			return (double) _value.integerValue;
 		case kILNumberDoubleType:
 			return _value.doubleValue;
+		case kILNumberBoolType:
+			return _value.booleanValue? 1.0 : 0.0;
 		default:
 			return 0;			
 	}
 }
 
+bool ILNumber::booleanValue() {
+	switch (_type) {
+		case kILNumberInt64Type:
+			return _value.integerValue? true : false;
+		case kILNumberDoubleType:
+			return _value.doubleValue? true : false;
+		case kILNumberBoolType:
+			return _value.booleanValue;
+		default:
+			return 0;			
+	}	
+}

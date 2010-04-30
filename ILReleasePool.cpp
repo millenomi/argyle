@@ -8,6 +8,7 @@
  */
 
 #include "ILReleasePool.h"
+#include <stdlib.h>
 
 struct ILReleasePoolLink {
 	ILObject* object;
@@ -19,6 +20,7 @@ static ILReleasePool* topmostPool = NULL;
 ILReleasePool::ILReleasePool() {
 	previousPool = topmostPool;
 	topmostPool = this;
+	lastLink = NULL;
 }
 
 void ILReleasePool::addObject(ILObject* o) {
@@ -39,6 +41,8 @@ ILReleasePool::~ILReleasePool() {
 		
 		delete l;
 	}
+	
+	
 	
 	topmostPool = previousPool;
 }

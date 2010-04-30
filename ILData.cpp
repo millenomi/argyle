@@ -9,6 +9,8 @@
 
 #include "ILData.h"
 #include <math.h>
+#include <stdlib.h>
+#include <string.h>
 
 static char ILDataIdentityValue = 0;
 void* const ILDataClassIdentity = &ILDataIdentityValue;
@@ -70,5 +72,5 @@ size_t ILData::length() { return _length; }
 // ~~~
 
 ILData* ILData::copy() {
-	return (ILData*) ILReleaseLater(new ILData(this->bytes(), this->length()));
+	return new ILData(this->bytes(), this->length());
 }

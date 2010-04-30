@@ -8,9 +8,13 @@
  */
 
 #include "ILObject.h"
+#include <iostream>
+
+#include "ILReleasePool.h"
 
 ILObject::ILObject() {
 	_retainCount = 1;
+	ILReleaseLater(this);
 }
 ILObject::~ILObject() {}
 
@@ -22,8 +26,13 @@ bool ILObject::release() {
 	if (_retainCount > 1) {
 		_retainCount--;
 		return false;
-	} else
+	} else if (_retainCount == 1) {
+		_retainCount = 0;
 		return true;
+	} else {
+		std::cerr << "Overreleased object!\n";
+		abort();
+	}
 }
 
 uint64_t ILObject::retainCount() {
@@ -31,8 +40,7 @@ uint64_t ILObject::retainCount() {
 }
 
 
-static char ILObjectClassIdentityPointedLocation = 0;
-void* const ILObjectClassIdentity = &ILObjectClassIdentityPointedLocation;
+void* const ILObjectClassIdentity = (void*) "ILObject";
 
 void* ILObject::classIdentity() {
 	return ILObjectClassIdentity;
@@ -54,6 +62,9 @@ ILObject* ILRetain(ILObject* o) {
 }
 
 void ILRelease(ILObject* o) {
+	if (!o)
+		return;
+	
 	if (o->release())
 		delete o;
 }

@@ -21,7 +21,6 @@ static size_t wowSize = sizeof(uint8_t) * 3;
 	ILReleasePool pool;
 	
 	ILData* d = new ILData(hello, helloSize);
-	ILReleaseLater(d);
 	
 	STAssertTrue(d != NULL, @"d was constructed");
 	STAssertTrue(d->classIdentity() == ILDataClassIdentity, @"d uses the ILData class id token");
@@ -36,7 +35,6 @@ static size_t wowSize = sizeof(uint8_t) * 3;
 	ILReleasePool pool;
 	
 	ILData* d = new ILData(hello, helloSize, false);
-	ILReleaseLater(d);
 	
 	STAssertTrue(d != NULL, @"d was constructed");
 	STAssertTrue(d->classIdentity() == ILDataClassIdentity, @"d uses the ILData class id token");
@@ -48,10 +46,8 @@ static size_t wowSize = sizeof(uint8_t) * 3;
 	ILReleasePool pool;
 
 	ILData* d = new ILData(hello, helloSize);
-	ILReleaseLater(d);
 
 	ILData* d2 = new ILData(hello, helloSize);
-	ILReleaseLater(d2);
 	
 	STAssertTrue(d->equals(d2), @"equals works");
 	STAssertTrue(d2->equals(d), @"equals is symmetric");
@@ -65,8 +61,6 @@ static size_t wowSize = sizeof(uint8_t) * 3;
 	ILReleasePool pool;
 	
 	ILData* d = new ILData(hello, helloSize);
-	ILReleaseLater(d);
-	
 	ILData* d2 = d->copy();
 	
 	STAssertTrue(d->equals(d2), @"equals works");
