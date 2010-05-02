@@ -19,7 +19,7 @@ enum {
 };
 typedef uint32_t ILNumberType;
 
-class ILNumber : public ILObject {
+class ILNumber : public ILObject, public ILCopiable {
 public:
 	ILNumber(int integerValue); // convenience, casts to int64_t.
 	
@@ -39,8 +39,11 @@ public:
 	virtual bool equals(ILObject* o);
 	virtual uint64_t hash();
 	
+	virtual bool canCopy();
+	virtual ILNumber* copy();
+	
 private:
-	int _type;
+	ILNumberType _type;
 	union {
 		int64_t integerValue;
 		double doubleValue;

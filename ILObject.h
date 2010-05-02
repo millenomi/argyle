@@ -34,8 +34,20 @@ public:
 	// the default implementation returns the value of the 'this' pointer as an integer.
 	virtual uint64_t hash();
 	
+	// ILObject's implementation returns false. If you implement the ILCopiable interface below, return true.
+	virtual bool canCopy();
+	
 private:
 	uint64_t _retainCount;
+};
+
+class ILCopiable {
+public:
+	// Default impl returns true.
+	virtual bool canCopy();
+	
+	// Returns a copy of this object.
+	virtual ILObject* copy() = 0;
 };
 
 extern ILObject* ILRetain(ILObject* o);

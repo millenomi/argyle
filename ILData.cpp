@@ -71,6 +71,10 @@ size_t ILData::length() { return _length; }
 
 // ~~~
 
+bool ILData::canCopy() {
+	return true;
+}
+
 ILData* ILData::copy() {
 	return new ILData(this->bytes(), this->length());
 }

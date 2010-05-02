@@ -17,10 +17,11 @@
 
 typedef void (*ILListIterationFunction)(ILObject* thisObject, void* context, bool* stop);
 
-class ILList : public ILObject {
+class ILList : public ILObject, public ILCopiable {
 public:
 	ILList();
 	ILList(ILObject* firstObject, ...) __attribute__((sentinel));
+	ILList(ILObject** objects, size_t count);
 	
 	size_t count();
 	void addObject(ILObject* o);
@@ -37,6 +38,10 @@ public:
 	virtual void* classIdentity();
 	virtual bool equals(ILObject* o);
 	virtual uint64_t hash();
+	
+	// ILCopiable overrides.
+	virtual bool canCopy();
+	virtual ILList* copy();
 	
 private:
 	void initialize();

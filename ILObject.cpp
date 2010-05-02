@@ -69,3 +69,10 @@ void ILRelease(ILObject* o) {
 		delete o;
 }
 
+bool ILObject::canCopy() {
+	return false;
+}
+
+bool ILCopiable::canCopy() {
+	return true;
+}

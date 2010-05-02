@@ -15,7 +15,7 @@
 #include <stdint.h>
 
 // A wrapper for a byte buffer.
-class ILData : public ILObject {
+class ILData : public ILObject, public ILCopiable {
 public:
 	// If makeCopy, the buffer's content will be copied.
 	// Otherwise, not. If so, it's the creator's responsibility to make sure the buffer remains alive as long as this object exists.
@@ -29,8 +29,9 @@ public:
 	uint8_t* bytes();
 	size_t length();
 	
-	// Creates a copy of this buffer.
-	ILData* copy();
+	// ILCopiable overrides.
+	virtual bool canCopy();
+	virtual ILData* copy();
 	
 	// ILObject overrides.
 	virtual void* classIdentity();

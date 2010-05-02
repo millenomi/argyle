@@ -35,10 +35,13 @@ public:
 	void setHashForValue(ILHashFunction h);
 	void setHashForKey(ILHashFunction h);
 	void setValueCorrespondsToKey(ILValueCorrespondsToKeyFunction h);
-	void setEquals(ILEqualsFunction h);
 	
 	void setRetain(ILRetainFunction h);
 	void setRelease(ILReleaseFunction h);
+
+	// Only needed if you use the containsValue() and removeValue() methods.
+	// Compares two values.
+	void setEquals(ILEqualsFunction h);
 	
 	size_t count();
 	void getAllValues(void** values);

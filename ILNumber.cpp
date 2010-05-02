@@ -108,3 +108,13 @@ bool ILNumber::booleanValue() {
 			return 0;			
 	}	
 }
+
+// ~~~
+
+bool ILNumber::canCopy() {
+	return true;
+}
+
+ILNumber* ILNumber::copy() {
+	return this; // ILNumber is immutable.
+}

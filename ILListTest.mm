@@ -95,4 +95,33 @@ static void ILListTest_Iterate(ILObject* o, void* context, bool* stop) {
 	STAssertTrue(objects[2]->equals(new ILData((uint8_t*)"Wow!", 4)), @"ILData str at 3rd position");	
 }
 
+- (void) testCopy;
+{
+	ILReleasePool pool;
+	
+	ILList* l = new ILList(new ILNumber(1), new ILNumber(2), new ILData((uint8_t*)"Wow!", 4), NULL);
+	
+	STAssertTrue(l->count() == 3, @"3 items");
+	STAssertTrue(l->objectAtIndex(0)->equals(new ILNumber(1)), @"ILNo 1 at first position");
+	STAssertTrue(l->objectAtIndex(1)->equals(new ILNumber(2)), @"ILNo 1 at 2nd position");
+	STAssertTrue(l->objectAtIndex(2)->equals(new ILData((uint8_t*)"Wow!", 4)), @"ILData str at 3rd position");	
+	
+	STAssertTrue(l->canCopy(), @"The object can be copied");
+	
+	ILList* l2 = l->copy();
+	
+	STAssertTrue(l2->count() == 3, @"3 items");
+	STAssertTrue(l2->objectAtIndex(0)->equals(new ILNumber(1)), @"ILNo 1 at first position");
+	STAssertTrue(l2->objectAtIndex(1)->equals(new ILNumber(2)), @"ILNo 1 at 2nd position");
+	STAssertTrue(l2->objectAtIndex(2)->equals(new ILData((uint8_t*)"Wow!", 4)), @"ILData str at 3rd position");
+
+	ILCopiable* lx = (ILCopiable*) l;
+	ILList* l3 = (ILList*) lx->copy();
+	
+	STAssertTrue(l3->count() == 3, @"3 items");
+	STAssertTrue(l3->objectAtIndex(0)->equals(new ILNumber(1)), @"ILNo 1 at first position");
+	STAssertTrue(l3->objectAtIndex(1)->equals(new ILNumber(2)), @"ILNo 1 at 2nd position");
+	STAssertTrue(l3->objectAtIndex(2)->equals(new ILData((uint8_t*)"Wow!", 4)), @"ILData str at 3rd position");
+}
+
 @end
