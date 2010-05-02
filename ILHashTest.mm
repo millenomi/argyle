@@ -85,6 +85,11 @@ static void ILHashTestSetUpHash(ILHash* h) {
 	h.removeValueForKey((void*) "a");
 	STAssertFalse(h.containsValueForKey((void*) "a"), @"No value for 'a'");
 	STAssertFalse(h.containsValue(&a), @"Cannot find a by value");
+	
+	h.addValue(&a);
+	h.removeValue(&a);
+	STAssertFalse(h.containsValueForKey((void*) "a"), @"No value for 'a'");
+	STAssertFalse(h.containsValue(&a), @"Cannot find a by value");
 }
 
 @end

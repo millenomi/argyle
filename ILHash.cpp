@@ -102,9 +102,18 @@ void ILHash::removeValueForKey(void* key) {
 	ILLinkedList* bucket; ILLinkedListPosition* position;
 	if (this->getBucketAndPositionForValueOrKey(NULL, key, &bucket, &position)) {
 		void* value = position->get();
-		
 		bucket->remove(position);
+		this->release(value);
 		
+		_count--;
+	}
+}
+
+void ILHash::removeValue(void* value) {
+	ILLinkedList* bucket; ILLinkedListPosition* position;
+	if (this->getBucketAndPositionForValueOrKey(value, NULL, &bucket, &position)) {
+		void* value = position->get();
+		bucket->remove(position);
 		this->release(value);
 		
 		_count--;

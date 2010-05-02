@@ -26,6 +26,7 @@ public:
 	
 	void addValue(void* value);
 	bool containsValue(void* value);
+	void removeValue(void* value);
 	
 	void removeValueForKey(void* key);
 	void* valueForKey(void* key);
