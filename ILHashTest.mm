@@ -42,6 +42,7 @@ static void ILHashTestSetUpHash(ILHash* h) {
 - (void) testInsertionAndRetrieval;
 {
 	ILHash h;
+	ILHashTestSetUpHash(&h);
 	
 	STAssertEquals((int) h.count(), 0, @"No items");
 	
@@ -67,6 +68,7 @@ static void ILHashTestSetUpHash(ILHash* h) {
 - (void) testEditing;
 {
 	ILHash h;
+	ILHashTestSetUpHash(&h);
 	
 	STAssertFalse(h.containsValueForKey((void*) "a"), @"No value for 'a'");
 	
