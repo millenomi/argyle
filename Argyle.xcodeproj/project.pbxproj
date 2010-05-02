@@ -33,6 +33,10 @@
 		154BDAD71184914900A7FCA2 /* ILNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BDAD51184914900A7FCA2 /* ILNumber.cpp */; };
 		154BDAD81184914900A7FCA2 /* ILNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BDAD51184914900A7FCA2 /* ILNumber.cpp */; };
 		154BDAEE1184945A00A7FCA2 /* ILNumberTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 154BDAED1184945A00A7FCA2 /* ILNumberTest.mm */; };
+		155E5056118B8B940036F741 /* ILHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 155E5055118B8B940036F741 /* ILHash.cpp */; };
+		155E5057118B8B940036F741 /* ILHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 155E5054118B8B940036F741 /* ILHash.h */; };
+		155E5058118B8B940036F741 /* ILHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 155E5055118B8B940036F741 /* ILHash.cpp */; };
+		157282FE118CBA0400588AF1 /* ILHashTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 157282FD118CBA0400588AF1 /* ILHashTest.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,10 @@
 		154BDAD51184914900A7FCA2 /* ILNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILNumber.cpp; sourceTree = "<group>"; };
 		154BDAEC1184945A00A7FCA2 /* ILNumberTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILNumberTest.h; sourceTree = "<group>"; };
 		154BDAED1184945A00A7FCA2 /* ILNumberTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILNumberTest.mm; sourceTree = "<group>"; };
+		155E5054118B8B940036F741 /* ILHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILHash.h; sourceTree = "<group>"; };
+		155E5055118B8B940036F741 /* ILHash.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILHash.cpp; sourceTree = "<group>"; };
+		157282FC118CBA0400588AF1 /* ILHashTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILHashTest.h; sourceTree = "<group>"; };
+		157282FD118CBA0400588AF1 /* ILHashTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILHashTest.mm; sourceTree = "<group>"; };
 		32BAE0B70371A74B00C91783 /* Argyle_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argyle_Prefix.pch; sourceTree = "<group>"; };
 		5073E0C609E734A800EC74B6 /* ArgyleProj.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = ArgyleProj.xcconfig; sourceTree = "<group>"; };
 		5073E0C709E734A800EC74B6 /* ArgyleTarget.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = ArgyleTarget.xcconfig; sourceTree = "<group>"; };
@@ -127,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				32BAE0B70371A74B00C91783 /* Argyle_Prefix.pch */,
+				155E5053118B8B860036F741 /* Hash */,
 				15015E3A118B3EBB00972828 /* List */,
 				15015CA3118AE34900972828 /* Basics */,
 				154BDAD31184912D00A7FCA2 /* Number */,
@@ -194,6 +203,17 @@
 			name = Number;
 			sourceTree = "<group>";
 		};
+		155E5053118B8B860036F741 /* Hash */ = {
+			isa = PBXGroup;
+			children = (
+				155E5054118B8B940036F741 /* ILHash.h */,
+				155E5055118B8B940036F741 /* ILHash.cpp */,
+				157282FC118CBA0400588AF1 /* ILHashTest.h */,
+				157282FD118CBA0400588AF1 /* ILHashTest.mm */,
+			);
+			name = Hash;
+			sourceTree = "<group>";
+		};
 		5073E0CA09E734BC00EC74B6 /* Configuration Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +239,7 @@
 				154BDAD61184914900A7FCA2 /* ILNumber.h in Headers */,
 				15015E3E118B3ECD00972828 /* ILList.h in Headers */,
 				15015E54118B41E200972828 /* ILListTest.h in Headers */,
+				155E5057118B8B940036F741 /* ILHash.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +343,8 @@
 				15015D6C118B301B00972828 /* ILLinkedListTest.mm in Sources */,
 				15015E3D118B3ECD00972828 /* ILList.cpp in Sources */,
 				15015E53118B41E200972828 /* ILListTest.mm in Sources */,
+				155E5056118B8B940036F741 /* ILHash.cpp in Sources */,
+				157282FE118CBA0400588AF1 /* ILHashTest.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +358,7 @@
 				154BDAD71184914900A7FCA2 /* ILNumber.cpp in Sources */,
 				15015D5F118B2FFD00972828 /* ILLinkedList.cpp in Sources */,
 				15015E3F118B3ECD00972828 /* ILList.cpp in Sources */,
+				155E5058118B8B940036F741 /* ILHash.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
