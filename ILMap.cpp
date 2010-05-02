@@ -71,3 +71,19 @@ void ILMap::removeValueForKey(ILObject* key) {
 size_t ILMap::count() {
 	return _h.count();
 }
+
+void ILMap::getContent(ILObject** keys, ILObject** values) {
+	if (!keys && !values)
+		return;
+		
+	size_t count = _h.count();
+	ILMapEntry** entries = (ILMapEntry**) alloca(sizeof(ILMapEntry*) * count);
+	_h.getAllValues((void**) entries);
+	
+	size_t i; for (i = 0; i < count; i++) {
+		if (keys)
+			keys[i] = entries[i]->key;
+		if (values)
+			values[i] = entries[i]->value;
+	}
+}
