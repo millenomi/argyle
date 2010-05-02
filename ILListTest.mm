@@ -8,19 +8,40 @@
 
 #import "ILListTest.h"
 #import "Argyle.h"
+#import "ILReleasePoolDelegate.h"
+
+@interface ILListTest ()
+
+- (BOOL) testIterationStepWithEachWithObject:(ILObject*) o;
+
+@end
+
 
 @implementation ILListTest
 
 - (void) testBasics;
 {	
-	ILReleasePool pool;
+	ILReleasePoolMonitor monitor;
+	ILNumber* one;
 	
-	ILList* l = new ILList(new ILNumber(1), new ILNumber(2), new ILData((uint8_t*)"Wow!", 4), NULL);
+	{
+		ILReleasePool pool;
+		pool.setDelegate(&monitor);
 	
-	STAssertTrue(l->count() == 3, @"3 items");
-	STAssertTrue(l->objectAtIndex(0)->equals(new ILNumber(1)), @"ILNo 1 at first position");
-	STAssertTrue(l->objectAtIndex(1)->equals(new ILNumber(2)), @"ILNo 1 at 2nd position");
-	STAssertTrue(l->objectAtIndex(2)->equals(new ILData((uint8_t*)"Wow!", 4)), @"ILData str at 3rd position");
+		ILList* l = new ILList((one = new ILNumber(1)), new ILNumber(2), new ILData((uint8_t*)"Wow!", 4), NULL);
+		
+		STAssertTrue(l->count() == 3, @"3 items");
+		STAssertTrue(l->objectAtIndex(0)->equals(new ILNumber(1)), @"ILNo 1 at first position");
+		STAssertTrue(l->objectAtIndex(1)->equals(new ILNumber(2)), @"ILNo 1 at 2nd position");
+		STAssertTrue(l->objectAtIndex(2)->equals(new ILData((uint8_t*)"Wow!", 4)), @"ILData str at 3rd position");
+		
+		l->removeObjectAtIndex(0);
+		STAssertTrue(l->count() == 2, @"2 items");
+		STAssertTrue(l->objectAtIndex(0)->equals(new ILNumber(2)), @"ILNo 1 at 2nd position");
+		STAssertTrue(l->objectAtIndex(1)->equals(new ILData((uint8_t*)"Wow!", 4)), @"ILData str at 3rd position");
+	}
+	
+	STAssertTrue(monitor.objectWasDestroyed(one), @"The list destroyed the object at index 0 by releasing it");
 }
 
 static void ILListTest_Iterate(ILObject* o, void* context, bool* stop) {

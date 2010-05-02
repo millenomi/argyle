@@ -21,6 +21,7 @@ ILReleasePool::ILReleasePool() {
 	previousPool = topmostPool;
 	topmostPool = this;
 	lastLink = NULL;
+	_delegate = NULL;
 }
 
 void ILReleasePool::addObject(ILObject* o) {
@@ -32,17 +33,29 @@ void ILReleasePool::addObject(ILObject* o) {
 }
 
 ILReleasePool::~ILReleasePool() {
+	if (_delegate)
+		_delegate->willDestroyPool(this);
+	
 	ILReleasePoolLink* link = lastLink;
 	
 	while (link) {
 		ILReleasePoolLink* l = link;
+		
+		bool willDestroy = false;
+		if (_delegate) {
+			_delegate->willReleaseObject(this, l->object);
+			willDestroy = (l->object->retainCount() == 1);
+		}
+		
 		ILRelease(l->object);
+		
+		if (_delegate && willDestroy)
+			_delegate->didDestroyObject(this, l->object);
+		
 		link = l->nextLink;
 		
 		delete l;
 	}
-	
-	
 	
 	topmostPool = previousPool;
 }
@@ -56,4 +69,12 @@ ILObject* ILReleaseLater(ILObject* o) {
 		ILCurrentReleasePool()->addObject(o);
 	
 	return o;
+}
+
+ILReleasePoolDelegate* ILReleasePool::delegate() {
+	return _delegate;
+}
+
+void ILReleasePool::setDelegate(ILReleasePoolDelegate* delegate) {
+	_delegate = delegate;
 }

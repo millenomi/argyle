@@ -7,10 +7,11 @@
  *
  */
 
-#include "ILObject.h"
-
 #ifndef ILReleasePool_H
 #define ILReleasePool_H 1
+
+#include "ILObject.h"
+#include "ILReleasePoolDelegate.h"
 
 struct ILReleasePoolLink;
 
@@ -24,7 +25,13 @@ public:
 	// You shouldn't call this directly. Instead, call ILReleaseLater().
 	void addObject(ILObject* o);
 	
+	// Delegates can monitor what's going on in the release pool. These are mostly inteded for testing. You must ensure a delegate exists for at least as long as this pool exists.
+	ILReleasePoolDelegate* delegate();
+	void setDelegate(ILReleasePoolDelegate* delegate);
+	
 private:
+	ILReleasePoolDelegate* _delegate;
+	
 	ILReleasePool* previousPool;
 	ILReleasePoolLink* lastLink;
 };

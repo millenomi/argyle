@@ -15,6 +15,4 @@
 	size_t indexSeen;
 }
 
-- (BOOL) testIterationStepWithEachWithObject:(ILObject*) o;
-
 @end

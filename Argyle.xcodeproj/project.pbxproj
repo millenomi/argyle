@@ -36,6 +36,7 @@
 		155E5056118B8B940036F741 /* ILHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 155E5055118B8B940036F741 /* ILHash.cpp */; };
 		155E5057118B8B940036F741 /* ILHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 155E5054118B8B940036F741 /* ILHash.h */; };
 		155E5058118B8B940036F741 /* ILHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 155E5055118B8B940036F741 /* ILHash.cpp */; };
+		156A8C09118DBFE800C4D67E /* ILReleasePoolDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 156A8C08118DBFE800C4D67E /* ILReleasePoolDelegate.cpp */; };
 		157282FE118CBA0400588AF1 /* ILHashTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 157282FD118CBA0400588AF1 /* ILHashTest.mm */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,8 @@
 		154BDAED1184945A00A7FCA2 /* ILNumberTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILNumberTest.mm; sourceTree = "<group>"; };
 		155E5054118B8B940036F741 /* ILHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILHash.h; sourceTree = "<group>"; };
 		155E5055118B8B940036F741 /* ILHash.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILHash.cpp; sourceTree = "<group>"; };
+		156A8C07118DBFE800C4D67E /* ILReleasePoolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILReleasePoolDelegate.h; sourceTree = "<group>"; };
+		156A8C08118DBFE800C4D67E /* ILReleasePoolDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILReleasePoolDelegate.cpp; sourceTree = "<group>"; };
 		157282FC118CBA0400588AF1 /* ILHashTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILHashTest.h; sourceTree = "<group>"; };
 		157282FD118CBA0400588AF1 /* ILHashTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILHashTest.mm; sourceTree = "<group>"; };
 		32BAE0B70371A74B00C91783 /* Argyle_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argyle_Prefix.pch; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 		154BD8D8118478DA00A7FCA2 /* ILObject */ = {
 			isa = PBXGroup;
 			children = (
+				156A8C07118DBFE800C4D67E /* ILReleasePoolDelegate.h */,
+				156A8C08118DBFE800C4D67E /* ILReleasePoolDelegate.cpp */,
 				154BD8AC1184773500A7FCA2 /* ILObject.h */,
 				154BD8AD1184773500A7FCA2 /* ILObject.cpp */,
 				154BD8D9118478E800A7FCA2 /* ILObjectTest.h */,
@@ -345,6 +350,7 @@
 				15015E53118B41E200972828 /* ILListTest.mm in Sources */,
 				155E5056118B8B940036F741 /* ILHash.cpp in Sources */,
 				157282FE118CBA0400588AF1 /* ILHashTest.mm in Sources */,
+				156A8C09118DBFE800C4D67E /* ILReleasePoolDelegate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
