@@ -15,6 +15,7 @@
 #include <stdlib.h>
 
 typedef uint64_t (*ILHashFunction)(void* value);
+typedef bool (*ILEqualsFunction)(void* value, void* otherValue);
 typedef bool (*ILValueCorrespondsToKeyFunction)(void* value, void* key);
 
 class ILHash {
@@ -24,14 +25,16 @@ public:
 	~ILHash();
 	
 	void addValue(void* value);
-	void removeValueForKey(void* key);
+	bool containsValue(void* value);
 	
+	void removeValueForKey(void* key);
 	void* valueForKey(void* key);
 	bool containsValueForKey(void* key);
 	
 	void setHashForValue(ILHashFunction h);
 	void setHashForKey(ILHashFunction h);
 	void setValueCorrespondsToKey(ILValueCorrespondsToKeyFunction h);
+	void setEquals(ILEqualsFunction h);
 	
 	void setRetain(ILRetainFunction h);
 	void setRelease(ILReleaseFunction h);
@@ -46,7 +49,8 @@ private:
 	
 	size_t _count;
 	
-	bool getBucketAndPositionForValueOfKey(void* key, ILLinkedList** bucket, ILLinkedListPosition** position);
+	// either value or key must be non-NULL.
+	bool getBucketAndPositionForValueOrKey(void* value, void* key, ILLinkedList** bucket, ILLinkedListPosition** position);
 	
 	ILHashFunction _hashForValue, _hashForKey;
 	ILValueCorrespondsToKeyFunction _valueCorrespondsToKey;
@@ -56,6 +60,9 @@ private:
 	
 	void* retain(void* value);
 	void release(void* value);
+	
+	ILEqualsFunction _equals;
+	bool equals(void* a, void* b);
 	
 	uint64_t hashForValue(void* value);
 	uint64_t hashForKey(void* value);

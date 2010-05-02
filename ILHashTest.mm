@@ -33,10 +33,15 @@ static bool ILHashTestValueHasKey(ILHashTestValue* v, char* k) {
 	return v->key[0] == k[0];
 }
 
+static bool ILHashTestEquals(void* a, void* b) {
+	return a == b;
+}
+
 static void ILHashTestSetUpHash(ILHash* h) {
 	h->setHashForValue((ILHashFunction) &ILHashTestFromValue);
 	h->setHashForKey((ILHashFunction) &ILHashTestFromKey);
 	h->setValueCorrespondsToKey((ILValueCorrespondsToKeyFunction) &ILHashTestValueHasKey);
+	h->setEquals(&ILHashTestEquals);
 }
 
 - (void) testInsertionAndRetrieval;
@@ -71,12 +76,15 @@ static void ILHashTestSetUpHash(ILHash* h) {
 	ILHashTestSetUpHash(&h);
 	
 	STAssertFalse(h.containsValueForKey((void*) "a"), @"No value for 'a'");
+	STAssertFalse(h.containsValue(&a), @"Cannot find a by value");
 	
 	h.addValue(&a);
 	STAssertTrue(h.containsValueForKey((void*) "a"), @"One value for 'a'");
+	STAssertTrue(h.containsValue(&a), @"Can find a by value");
 	
 	h.removeValueForKey((void*) "a");
 	STAssertFalse(h.containsValueForKey((void*) "a"), @"No value for 'a'");
+	STAssertFalse(h.containsValue(&a), @"Cannot find a by value");
 }
 
 @end

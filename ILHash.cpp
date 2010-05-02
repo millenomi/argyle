@@ -39,6 +39,8 @@ void ILHash::initialize(size_t buckets) {
 	_retain = NULL;
 	_release = NULL;
 	
+	_equals = NULL;
+	
 	_count = 0;
 }
 
@@ -55,13 +57,20 @@ void ILHash::addValue(void* value) {
 	_count++;
 }
 
-bool ILHash::getBucketAndPositionForValueOfKey(void* key, ILLinkedList** bucket, ILLinkedListPosition** position) {
-	uint64_t hash = this->hashForKey(key);
+bool ILHash::getBucketAndPositionForValueOrKey(void* value, void* key, ILLinkedList** bucket, ILLinkedListPosition** position) {
+	uint64_t hash;
+	
+	if (value)
+		hash = this->hashForValue(value);
+	else
+		hash = this->hashForKey(key);
+	
 	size_t i = hash % _bucketsCount;
 	
 	ILLinkedListPosition* p = _buckets[i].beginning();
 	while (p) {
-		if (this->valueCorrespondsToKey(p->get(), key)) {
+		if ((value && this->equals(p->get(), value)) ||
+			(key && this->valueCorrespondsToKey(p->get(), key))) {
 			if (bucket) *bucket = &_buckets[i];
 			if (position) *position = p;
 			return true;
@@ -75,19 +84,23 @@ bool ILHash::getBucketAndPositionForValueOfKey(void* key, ILLinkedList** bucket,
 
 void* ILHash::valueForKey(void* key) {
 	ILLinkedListPosition* position;
-	if (this->getBucketAndPositionForValueOfKey(key, NULL, &position))
+	if (this->getBucketAndPositionForValueOrKey(NULL, key, NULL, &position))
 		return position->get();
 	else
 		return NULL;
 }
 
 bool ILHash::containsValueForKey(void* key) {
-	return this->getBucketAndPositionForValueOfKey(key, NULL, NULL);
+	return this->getBucketAndPositionForValueOrKey(NULL, key, NULL, NULL);
+}
+
+bool ILHash::containsValue(void* value) {
+	return this->getBucketAndPositionForValueOrKey(value, NULL, NULL, NULL);	
 }
 
 void ILHash::removeValueForKey(void* key) {
 	ILLinkedList* bucket; ILLinkedListPosition* position;
-	if (this->getBucketAndPositionForValueOfKey(key, &bucket, &position)) {
+	if (this->getBucketAndPositionForValueOrKey(NULL, key, &bucket, &position)) {
 		void* value = position->get();
 		
 		bucket->remove(position);
@@ -141,6 +154,13 @@ void ILHash::release(void* value) {
 		_release(value);
 }
 
+bool ILHash::equals(void* a, void* b) {
+	if (_equals)
+		return _equals(a, b);
+	else
+		return a == b;
+}
+
 
 void ILHash::setHashForValue(ILHashFunction h) {
 	_hashForValue = h;
@@ -152,6 +172,10 @@ void ILHash::setHashForKey(ILHashFunction h) {
 
 void ILHash::setValueCorrespondsToKey(ILValueCorrespondsToKeyFunction h) {
 	_valueCorrespondsToKey = h;
+}
+
+void ILHash::setEquals(ILEqualsFunction h) {
+	_equals = h;
 }
 
 void ILHash::setRetain(ILRetainFunction h) {
