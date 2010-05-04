@@ -52,11 +52,15 @@ void ILMap::initialize() {
 }
 
 void ILMap::setValueForKey(ILCopiable* key, ILObject* value) {
+	ILRetain(value); // in case remove... below releases the value.
+	
 	ILObject* keyCopy = key->copy();
 	_h.removeValueForKey(keyCopy);
 	
 	ILMapEntry* e = new ILMapEntry(keyCopy, value);
 	_h.addValue(e);
+	
+	ILRelease(value);
 }
 
 ILObject* ILMap::valueForKey(ILObject* key) {
