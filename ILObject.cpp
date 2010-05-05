@@ -10,7 +10,23 @@
 #include "ILObject.h"
 #include <iostream>
 
+#include <pthread.h>
+
 #include "ILReleasePool.h"
+
+static pthread_mutex_t ILRetainReleaseMutex;
+void ILRetainReleaseMutexInit() __attribute__((constructor));
+
+void ILRetainReleaseMutexInit() {
+	pthread_mutexattr_t attrs;
+	pthread_mutexattr_init(&attrs);
+
+	pthread_mutexattr_settype(&attrs, PTHREAD_MUTEX_RECURSIVE);
+	
+	int result = pthread_mutex_init(&ILRetainReleaseMutex, &attrs);
+	if (result != 0)
+		abort();
+}
 
 ILObject::ILObject() {
 	_retainCount = 1;
@@ -19,10 +35,14 @@ ILObject::ILObject() {
 ILObject::~ILObject() {}
 
 void ILObject::retain() {
+	pthread_mutex_lock(&ILRetainReleaseMutex);
 	_retainCount++;
+	pthread_mutex_unlock(&ILRetainReleaseMutex);
 }
 
 bool ILObject::release() {
+	pthread_mutex_lock(&ILRetainReleaseMutex);
+
 	if (_retainCount > 1) {
 		_retainCount--;
 		return false;
@@ -33,10 +53,14 @@ bool ILObject::release() {
 		std::cerr << "Overreleased object!\n";
 		abort();
 	}
+
+	pthread_mutex_unlock(&ILRetainReleaseMutex);
 }
 
 uint64_t ILObject::retainCount() {
+	pthread_mutex_lock(&ILRetainReleaseMutex);
 	return _retainCount;
+	pthread_mutex_unlock(&ILRetainReleaseMutex);
 }
 
 
