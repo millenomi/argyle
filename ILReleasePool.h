@@ -37,7 +37,7 @@ private:
 };
 
 
-extern ILReleasePool* ILCurrentReleasePool();
+extern ILReleasePool* ILReleasePoolCurrent();
 extern ILObject* ILReleaseLater(ILObject* o);
 
 #endif
