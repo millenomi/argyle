@@ -41,6 +41,9 @@
 		156A8D2F118E0D4800C4D67E /* ILMapTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 156A8D2E118E0D4800C4D67E /* ILMapTest.mm */; };
 		156A8D30118E0D4C00C4D67E /* ILMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 156A8CCB118E059500C4D67E /* ILMap.cpp */; };
 		157282FE118CBA0400588AF1 /* ILHashTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 157282FD118CBA0400588AF1 /* ILHashTest.mm */; };
+		15EA0178119168D100C4296E /* ILMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15EA0177119168D100C4296E /* ILMessage.cpp */; };
+		15EA0179119168D100C4296E /* ILMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 15EA0176119168D100C4296E /* ILMessage.h */; };
+		15EA017A119168D100C4296E /* ILMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15EA0177119168D100C4296E /* ILMessage.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,8 @@
 		156A8D2E118E0D4800C4D67E /* ILMapTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILMapTest.mm; sourceTree = "<group>"; };
 		157282FC118CBA0400588AF1 /* ILHashTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILHashTest.h; sourceTree = "<group>"; };
 		157282FD118CBA0400588AF1 /* ILHashTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILHashTest.mm; sourceTree = "<group>"; };
+		15EA0176119168D100C4296E /* ILMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILMessage.h; sourceTree = "<group>"; };
+		15EA0177119168D100C4296E /* ILMessage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILMessage.cpp; sourceTree = "<group>"; };
 		32BAE0B70371A74B00C91783 /* Argyle_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argyle_Prefix.pch; sourceTree = "<group>"; };
 		5073E0C609E734A800EC74B6 /* ArgyleProj.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = ArgyleProj.xcconfig; sourceTree = "<group>"; };
 		5073E0C709E734A800EC74B6 /* ArgyleTarget.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = ArgyleTarget.xcconfig; sourceTree = "<group>"; };
@@ -144,6 +149,7 @@
 		08FB77ACFE841707C02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				15EA0175119168C500C4296E /* ILMessage */,
 				32BAE0B70371A74B00C91783 /* Argyle_Prefix.pch */,
 				156A8C57118E011100C4D67E /* Map */,
 				155E5053118B8B860036F741 /* Hash */,
@@ -238,6 +244,15 @@
 			name = Map;
 			sourceTree = "<group>";
 		};
+		15EA0175119168C500C4296E /* ILMessage */ = {
+			isa = PBXGroup;
+			children = (
+				15EA0176119168D100C4296E /* ILMessage.h */,
+				15EA0177119168D100C4296E /* ILMessage.cpp */,
+			);
+			name = ILMessage;
+			sourceTree = "<group>";
+		};
 		5073E0CA09E734BC00EC74B6 /* Configuration Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +279,7 @@
 				15015E3E118B3ECD00972828 /* ILList.h in Headers */,
 				15015E54118B41E200972828 /* ILListTest.h in Headers */,
 				155E5057118B8B940036F741 /* ILHash.h in Headers */,
+				15EA0179119168D100C4296E /* ILMessage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +388,7 @@
 				156A8C09118DBFE800C4D67E /* ILReleasePoolDelegate.cpp in Sources */,
 				156A8CCC118E059500C4D67E /* ILMap.cpp in Sources */,
 				156A8D2F118E0D4800C4D67E /* ILMapTest.mm in Sources */,
+				15EA0178119168D100C4296E /* ILMessage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +404,7 @@
 				15015E3F118B3ECD00972828 /* ILList.cpp in Sources */,
 				155E5058118B8B940036F741 /* ILHash.cpp in Sources */,
 				156A8D30118E0D4C00C4D67E /* ILMap.cpp in Sources */,
+				15EA017A119168D100C4296E /* ILMessage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

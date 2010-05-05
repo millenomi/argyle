@@ -1,4 +1,9 @@
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/types.h>
+
+
 #include "ILObject.h"
 #include "ILReleasePool.h"
 
