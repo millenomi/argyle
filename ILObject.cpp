@@ -41,20 +41,23 @@ void ILObject::retain() {
 }
 
 bool ILObject::release() {
+	bool result;
+	
 	pthread_mutex_lock(&ILRetainReleaseMutex);
 
 	if (_retainCount > 1) {
 		_retainCount--;
-		return false;
+		result = false;
 	} else if (_retainCount == 1) {
 		_retainCount = 0;
-		return true;
+		result = true;
 	} else {
 		std::cerr << "Overreleased object!\n";
 		abort();
 	}
 
 	pthread_mutex_unlock(&ILRetainReleaseMutex);
+	return result;
 }
 
 uint64_t ILObject::retainCount() {
