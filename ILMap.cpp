@@ -91,3 +91,55 @@ void ILMap::getContent(ILObject** keys, ILObject** values) {
 			values[i] = entries[i]->value;
 	}
 }
+
+class ILMapDefaultImplIterator : public ILMapIterator {
+public:
+	ILMap* _m; ILHash* _h;
+	
+	ILMapDefaultImplIterator(ILMap* m, ILHash* h) : ILMapIterator() {
+		_m = (ILMap*) ILRetain(m);
+		_h = h;
+		
+		bucketIndex = 0;
+		current = NULL;
+	}
+	
+	~ILMapDefaultImplIterator() {
+		ILRelease(_m);
+	}
+	
+	size_t bucketIndex;
+	ILLinkedListPosition* current;
+	
+	virtual bool getNext(ILObject** key, ILObject** value) {
+		if (bucketIndex >= _h->bucketsCount())
+			return false;
+		
+		if (current)
+			current = current->next();
+		
+		if (!current) {
+			bucketIndex++;
+			if (bucketIndex >= _h->bucketsCount())
+				return false;
+		}
+		
+		while (!current) {
+			current = _h->beginningOfBucketAtIndex(bucketIndex);
+			if (!current)
+				bucketIndex++;
+			
+			if (bucketIndex >= _h->bucketsCount())
+				return false;
+		}
+		
+		ILMapEntry* e = (ILMapEntry*) current->get();
+		if (key) *key = e->key;
+		if (value) *value = e->value;
+		return true;
+	}
+};
+
+ILMapIterator* ILMap::iterate() {
+	return new ILMapDefaultImplIterator(this, &_h);
+}

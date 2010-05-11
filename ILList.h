@@ -15,6 +15,11 @@
 
 #include "ILLinkedList.h"
 
+class ILListIterator : public ILObject {
+public:
+	virtual ILObject* next() = 0;
+};
+
 /** This function is called repeatedly with the objects contained in the list by the ILList::each() function.
  @param thisObject One of the objects in the list.
  @param context The context pointer passed to the ILList::each() function.
@@ -61,6 +66,8 @@ public:
 	 @param objects A C array at least #count() items long. On return, the indexes between 0 and #count() - 1 will contain this list's objects. */
 	void getAllObjects(ILObject** objects);
 
+	ILListIterator* iterate();
+	
 	// ILObject overrides.
 	virtual void* classIdentity();
 	virtual bool equals(ILObject* o);

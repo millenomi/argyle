@@ -66,6 +66,11 @@ ILNumber::ILNumber(bool b) {
 	_value.booleanValue = b;
 }
 
+ILNumber::ILNumber(void* p) {
+	_type = kILNumberNonretainedPointerType;
+	_value.nonretainedPointerValue = p;
+}
+
 ILNumberType ILNumber::type() { return _type; }
 
 // ~~~
@@ -78,6 +83,8 @@ int64_t ILNumber::integerValue() {
 			return (int64_t) _value.doubleValue;
 		case kILNumberBoolType:
 			return _value.booleanValue? 1 : 0;
+		case kILNumberNonretainedPointerType:
+			return (intptr_t) _value.nonretainedPointerValue;
 		default:
 			return 0;
 	}
@@ -91,6 +98,8 @@ double ILNumber::doubleValue() {
 			return _value.doubleValue;
 		case kILNumberBoolType:
 			return _value.booleanValue? 1.0 : 0.0;
+		case kILNumberNonretainedPointerType:
+			return 0.0; // pointers can't be floats.
 		default:
 			return 0;			
 	}
@@ -104,6 +113,8 @@ bool ILNumber::booleanValue() {
 			return _value.doubleValue? true : false;
 		case kILNumberBoolType:
 			return _value.booleanValue;
+		case kILNumberNonretainedPointerType:
+			return _value.nonretainedPointerValue? true : false;
 		default:
 			return 0;			
 	}	

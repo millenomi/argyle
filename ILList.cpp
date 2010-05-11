@@ -78,7 +78,7 @@ ILList::ILList(ILObject** objects, size_t count) : ILObject() {
 }
 
 void ILList::initialize() {
-	_content.setRetain((ILRetainFunction) &ILRetain);
+	_content.setRetain((ILRetainFunction) &ILPerformRetain);
 	_content.setRelease((ILReleaseFunction) &ILRelease);
 }
 
@@ -139,4 +139,34 @@ ILList* ILList::copy() {
 	ILObject** objects = (ILObject**) alloca(sizeof(ILObject*) * count);
 	this->getAllObjects(objects);
 	return new ILList(objects, count);
+}
+
+// ~~~
+
+class ILListDefaultImplIterator : public ILListIterator {
+public:
+	ILList* _list;
+	ILLinkedListPosition* _currentPosition;
+	
+	ILListDefaultImplIterator(ILList* l, ILLinkedListPosition* top) {
+		_currentPosition = top;
+		_list = (ILList*) ILRetain(l);
+	}
+	
+	~ILListDefaultImplIterator() {
+		ILRelease(_list);
+	}
+	
+	virtual ILObject* next() {
+		if (!_currentPosition)
+			return NULL;
+		
+		ILObject* o = (ILObject*) _currentPosition->get();
+		_currentPosition = _currentPosition->next();
+		return o;
+	}
+};
+
+ILListIterator* ILList::iterate() {
+	return new ILListDefaultImplIterator(this, _content.beginning());
 }

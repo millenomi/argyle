@@ -84,6 +84,15 @@ public:
 	/** Obtains the values of this hash as a C array of pointers. This function executes in slightly-higher-than-linear time.
 	 @param values A C array of values at least #count() items long. On return, the indexes between 0 and #count() - 1 will contain this hash's values. */
 	void getAllValues(void** values);
+	
+	/** Obtains a particular bucket's first position; you should not modify the contents of the bucket. You should not call this method unless you need to implement fast iteration or similar algorithm; for general use, call #getAllValues() instead.
+	 
+		@param i The index of the bucket, a number between 0 and #bucketsCount() - 1.
+	 */
+	ILLinkedListPosition* beginningOfBucketAtIndex(size_t i);
+	
+	/** Returns the number of buckets used by this hash. */
+	size_t bucketsCount();
 
 private:
 	void initialize(size_t buckets);

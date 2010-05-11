@@ -194,3 +194,11 @@ void ILHash::setRetain(ILRetainFunction h) {
 void ILHash::setRelease(ILReleaseFunction h) {
 	_release = h;
 }
+
+ILLinkedListPosition* ILHash::beginningOfBucketAtIndex(size_t i) {
+	return _buckets[i].beginning();
+}
+
+size_t ILHash::bucketsCount() {
+	return _bucketsCount;
+}

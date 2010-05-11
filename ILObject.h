@@ -50,9 +50,17 @@ public:
 	virtual ILObject* copy() = 0;
 };
 
-extern ILObject* ILRetain(ILObject* o);
+extern ILObject* ILPerformRetain(ILObject* o);
 extern void ILRelease(ILObject* o);
 
+template <class T>
+T* ILRetain(T* x) {
+	return (T*) ILPerformRetain(x);
+}
+
+
 extern void* const ILObjectClassIdentity;
+
+#define ILSizeOfCArrayOfObjects(n) (sizeof(ILObject*) * (n))
 
 #endif

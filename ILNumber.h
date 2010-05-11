@@ -16,6 +16,7 @@ enum {
 	kILNumberInt64Type = 0,
 	kILNumberDoubleType,
 	kILNumberBoolType,
+	kILNumberNonretainedPointerType,
 };
 typedef uint32_t ILNumberType;
 
@@ -27,12 +28,15 @@ public:
 	ILNumber(int64_t integerValue);
 	ILNumber(double doubleValue);
 	
+	ILNumber(void* nonretainedPointerValue);
 	
 	ILNumberType type();
 	
 	int64_t integerValue();
 	double doubleValue();
 	bool booleanValue();
+	
+	void* nonretainedPointerValue();
 	
 	// ILObject overrides.
 	virtual void* classIdentity();
@@ -48,6 +52,7 @@ private:
 		int64_t integerValue;
 		double doubleValue;
 		bool booleanValue;
+		void* nonretainedPointerValue;
 	} _value;
 };
 

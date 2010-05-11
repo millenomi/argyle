@@ -13,6 +13,13 @@
 #include "ILObject.h"
 #include "ILHash.h"
 
+class ILMapIterator : public ILObject {
+public:
+	// either or both can be NULL to ignore.
+	virtual bool getNext(ILObject** key, ILObject** value) = 0;
+};
+
+
 /**
  A map associates an object (a 'key') to another (a 'value') and allows you to retrieve the value associated with a key, if any.
  Keys of a map must be copiable and will be copied by the map upon insertion; you don't need to pass the exact same object you passed for the key, so long that the object you pass is equal to the original (as indicated by ILObject::equals()). Values, instead, will be retained.
@@ -45,6 +52,8 @@ public:
 	 @param values A C array at least ILMap::count() items long. On return, the indexes between 0 and ILMap::count() - 1 will contain this map's values.
 	 */
 	void getContent(ILObject** keys, ILObject** values);
+	
+	ILMapIterator* iterate();
 	
 private:
 	ILHash _h;
