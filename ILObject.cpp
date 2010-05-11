@@ -84,6 +84,9 @@ uint64_t ILObject::hash() {
 
 
 ILObject* ILPerformRetain(ILObject* o) {
+	if (!o)
+		return NULL;
+	
 	o->retain();
 	return o;
 }

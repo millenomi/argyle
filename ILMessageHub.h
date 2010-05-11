@@ -13,12 +13,17 @@
 #include "Argyle.h"
 #include "ILMessage.h" // TODO include in Argyle.h
 
+/**
+ A message hub is a target for messages that works to distribute those messages to a number of other targets. You register a number of targets with an instance of this class, then have messages delivered to that instance; the message will be delivered to all registered targets that want to receive that particular kind of message (optionally only from a given source).
+ 
+ */
 class ILMessageHub : public ILTarget {
 public:
 	ILMessageHub();
 	~ILMessageHub();
 	
-	void addTargetForMessagesOfType(ILTarget* target, void* type, ILObject* source);
+	void addTargetForMessagesOfKind(ILTarget* target, void* kind, ILObject* source);
+	void removeTargetForMessagesOfKind(ILTarget* t, void* kind);
 	
 	virtual void deliverMessage(ILMessage* m);
 	

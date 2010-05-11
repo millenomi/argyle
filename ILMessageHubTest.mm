@@ -55,8 +55,8 @@ public:
 
 	ILMessageHub* hub = new ILMessageHub();
 	
-	hub->addTargetForMessagesOfType(r, ILMessageHubTestMessageKind, r);
-	hub->addTargetForMessagesOfType(r2, ILMessageHubTestMessageKind, NULL);
+	hub->addTargetForMessagesOfKind(r, ILMessageHubTestMessageKind, r);
+	hub->addTargetForMessagesOfKind(r2, ILMessageHubTestMessageKind, NULL);
 	hub->deliverMessage(m);
 	
 	STAssertTrue(r->received, @"Message correctly received");

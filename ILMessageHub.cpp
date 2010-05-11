@@ -33,7 +33,7 @@ ILMessageHub::~ILMessageHub() {
 	ILRelease(_targets);
 }
 
-void ILMessageHub::addTargetForMessagesOfType(ILTarget* target, void* type, ILObject* source) {
+void ILMessageHub::addTargetForMessagesOfKind(ILTarget* target, void* type, ILObject* source) {
 	ILMessageHubTarget* t = new ILMessageHubTarget(target, source);
 	ILNumber* key = new ILNumber(type);
 	
@@ -45,6 +45,24 @@ void ILMessageHub::addTargetForMessagesOfType(ILTarget* target, void* type, ILOb
 	
 	l->addObject(t);
 }
+
+void ILMessageHub::removeTargetForMessagesOfKind(ILTarget* t, void* kind) {
+	ILNumber* key = new ILNumber(kind);
+	ILList* l = (ILList*) _targets->valueForKey(key);
+	if (l) {
+		ILListIterator* i = l->copy()->iterate();
+		ILMessageHubTarget* ht;
+		
+		size_t index = 0;
+		while ((ht = (ILMessageHubTarget*) i->next())) {
+			if (ht->_target == t)
+				l->removeObjectAtIndex(index);
+			else
+				index++;
+		}
+	}
+}
+
 
 void ILMessageHub::deliverMessage(ILMessage* m) {
 //#error TODO
