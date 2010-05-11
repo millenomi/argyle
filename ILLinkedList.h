@@ -12,6 +12,8 @@
 
 #include <sys/types.h>
 
+typedef size_t ILIndex;
+
 /** This function is called by ILLinkedList and ILHash to retain values inserted into those containers. It will be called once per value by the container, and can return a different value which will be used instead. One invocation of this function will be paired with an invocation of the corresponding ILReleaseFunction. */
 typedef void* (*ILRetainFunction)(void*);
 
@@ -49,7 +51,7 @@ public:
 	void setRelease(ILReleaseFunction f);
 	
 	/** Returns the number of values in this list. This method executes in constant time. */
-	size_t count();
+	ILIndex count();
 	
 	/** Removes all items in this list. This method executes at most in linear time. */
 	void clear();
@@ -74,7 +76,7 @@ public:
 	/** Returns the last position in the list in constant time. */
 	ILLinkedListPosition* end();
 	/** Returns the position at the given index in the list. This method may execute at most in linear time. */
-	ILLinkedListPosition* positionAtIndex(size_t index);
+	ILLinkedListPosition* positionAtIndex(ILIndex index);
 	
 	/** Obtains the content of the list as a C array. This method may execute at most in linear time.
 	 @param values A C array at least #count() items long. On return, values 0 to #count() - 1 will be set to the values contained by the list. */
@@ -94,7 +96,7 @@ private:
 	ILLinkedListLink* _head;
 	ILLinkedListLink* _tail;
 	
-	size_t _count;
+	ILIndex _count;
 };
 
 #endif // #ifndef ILLinkedList_H

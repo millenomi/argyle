@@ -16,25 +16,34 @@
 #include "ILThreadTarget.h"
 #include "ILSource.h"
 
+typedef double ILTimeInterval;
+extern ILTimeInterval ILGetAbsoluteTime();
+
 class ILRunLoop : public ILTarget {
 public:
 	ILRunLoop();
 	~ILRunLoop();
 	
 	void addSource(ILSource* s);
+	void removeSource(ILSource* s);
+	
 	void spin();
 	
 	ILMessageHub* currentMessageHub();
 	ILTarget* currentThreadTarget();
 	
+	void spinForUpTo(ILTimeInterval seconds);
+	
 	// ONLY thread-safe method of this class.
 	virtual void deliverMessage(ILMessage* m);
+	
+	static ILRunLoop* current();
 	
 private:
 	ILList* _sources;
 	
 	ILMessageHub* _messageHub;
-	ILTarget* _target;
+	ILTarget* _target;	
 };
 
 #endif // #ifndef ILRunLoop_H

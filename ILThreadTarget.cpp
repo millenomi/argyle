@@ -10,7 +10,7 @@
 #include "ILThreadTarget.h"
 
 ILThreadTarget::ILThreadTarget(ILTarget* t) {
-	_deliveryTarget = (ILTarget*) ILRetain(t);
+	_deliveryTarget = ILRetain(t);
 	_messages = (ILList*) ILRetain(new ILList());
 	
 	pthread_mutexattr_t attrs;
@@ -25,7 +25,7 @@ ILThreadTarget::ILThreadTarget(ILTarget* t) {
 
 ILThreadTarget::~ILThreadTarget() {
 	pthread_mutex_destroy(&_mutex);
-	ILRelease(_deliveryTarget);
+	ILRelease((ILObject*) _deliveryTarget);
 	ILRelease(_messages);
 }
 

@@ -10,8 +10,8 @@
 #ifndef ILMessageHub_H
 #define ILMessageHub_H 1
 
-#include "Argyle.h"
-#include "ILMessage.h" // TODO include in Argyle.h
+#include "ILObject.h"
+#include "ILMessage.h"
 
 /**
  A message hub is a target for messages that works to distribute those messages to a number of other targets. You register a number of targets with an instance of this class, then have messages delivered to that instance; the message will be delivered to all registered targets that want to receive that particular kind of message (optionally only from a given source).

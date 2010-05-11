@@ -8,9 +8,35 @@
  */
 
 #include "ILRunLoop.h"
+#include <sys/time.h>
+#include <pthread.h>
+
+ILTimeInterval ILGetAbsoluteTime() {
+	struct timeval tv;
+	gettimeofday(&tv, NULL);
+	
+	ILTimeInterval i = (double) tv.tv_sec + (double) tv.tv_usec / 1000000;
+	return i;
+}
 
 void ILRunLoop::addSource(ILSource* s) {
+	_sources->addObject((ILObject*) s);
+}
+
+void ILRunLoop::removeSource(ILSource* s) {
+	_sources->removeObject((ILObject*) s);
+}
+
+
+void ILRunLoop::spinForUpTo(ILTimeInterval seconds) {	
+	ILTimeInterval start = ILGetAbsoluteTime();
 	
+	do {
+		if (_sources->count() == 0)
+			return;
+		
+		this->spin();
+	} while (ILGetAbsoluteTime() - start < seconds);
 }
 
 void ILRunLoop::spin() {
@@ -18,10 +44,10 @@ void ILRunLoop::spin() {
 	ILSource* s;
 	
 	while ((s = (ILSource*) eachSource->next())) {
-		s->performPeriodicWork();
+		if (_sources->containsObject((ILObject*) s))
+			s->performPeriodicWork();
 	}
 }
-
 
 ILRunLoop::ILRunLoop() : ILTarget() {
 	_sources = ILRetain(new ILList());
@@ -32,7 +58,7 @@ ILRunLoop::ILRunLoop() : ILTarget() {
 ILRunLoop::~ILRunLoop() {
 	ILRelease(_sources);
 	ILRelease(_messageHub);
-	ILRelease(_target);
+	ILRelease((ILObject*) _target);
 }
 
 ILMessageHub* ILRunLoop::currentMessageHub() {
@@ -55,3 +81,20 @@ void ILRunLoop::deliverMessage(ILMessage* m) {
 		_target->deliverMessage(m);
 }
 
+// ~~~
+
+static pthread_key_t ILRunLoopCurrentKey;
+
+__attribute__((constructor)) void ILRunLoopInitializeKey() {
+	pthread_key_create(&ILRunLoopCurrentKey, (void (*)(void*)) &ILRelease);
+}
+
+ILRunLoop* ILRunLoop::current() {	
+	ILRunLoop* r = (ILRunLoop*) pthread_getspecific(ILRunLoopCurrentKey);
+	if (!r) {
+		r = ILRetain(new ILRunLoop());
+		pthread_setspecific(ILRunLoopCurrentKey, (const void*) r);
+	}
+	
+	return r;
+}

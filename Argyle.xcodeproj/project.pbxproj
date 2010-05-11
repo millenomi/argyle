@@ -23,6 +23,21 @@
 		15234BCE119995CC00721A5E /* ILRunLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = 15234BCB119995CC00721A5E /* ILRunLoop.h */; };
 		15234BCF119995CC00721A5E /* ILRunLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15234BCC119995CC00721A5E /* ILRunLoop.cpp */; };
 		15234BD2119996D100721A5E /* ILSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 15234BD1119996D100721A5E /* ILSource.h */; };
+		15234CC11199E3CF00721A5E /* ILData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BDA4B1184875000A7FCA2 /* ILData.cpp */; };
+		15234CC21199E3CF00721A5E /* ILHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 155E5055118B8B940036F741 /* ILHash.cpp */; };
+		15234CC31199E3CF00721A5E /* ILLinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15015CA5118AE35400972828 /* ILLinkedList.cpp */; };
+		15234CC41199E3CF00721A5E /* ILList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15015E3C118B3ECD00972828 /* ILList.cpp */; };
+		15234CC51199E3CF00721A5E /* ILMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 156A8CCB118E059500C4D67E /* ILMap.cpp */; };
+		15234CC61199E3CF00721A5E /* ILMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15EA0177119168D100C4296E /* ILMessage.cpp */; };
+		15234CC71199E3CF00721A5E /* ILMessageHub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154AD0A311921F0300950C9D /* ILMessageHub.cpp */; };
+		15234CC81199E3CF00721A5E /* ILNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BDAD51184914900A7FCA2 /* ILNumber.cpp */; };
+		15234CC91199E3CF00721A5E /* ILObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BD8AD1184773500A7FCA2 /* ILObject.cpp */; };
+		15234CCA1199E3CF00721A5E /* ILReleasePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BD8FF11847AEB00A7FCA2 /* ILReleasePool.cpp */; };
+		15234CCB1199E3CF00721A5E /* ILReleasePoolDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 156A8C08118DBFE800C4D67E /* ILReleasePoolDelegate.cpp */; };
+		15234CCC1199E3CF00721A5E /* ILRunLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15234BCC119995CC00721A5E /* ILRunLoop.cpp */; };
+		15234CCD1199E3CF00721A5E /* ILThreadTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15234BC1119993E300721A5E /* ILThreadTarget.cpp */; };
+		15234CCE1199E3D300721A5E /* ILReleasePoolDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 156A8C08118DBFE800C4D67E /* ILReleasePoolDelegate.cpp */; };
+		15234CF11199E45A00721A5E /* main-Playground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15234CF01199E45A00721A5E /* main-Playground.cpp */; };
 		154AD0A411921F0300950C9D /* ILMessageHub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154AD0A311921F0300950C9D /* ILMessageHub.cpp */; };
 		154AD0A511921F0300950C9D /* ILMessageHub.h in Headers */ = {isa = PBXBuildFile; fileRef = 154AD0A211921F0300950C9D /* ILMessageHub.h */; };
 		154AD0A611921F0300950C9D /* ILMessageHub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154AD0A311921F0300950C9D /* ILMessageHub.cpp */; };
@@ -58,6 +73,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		15234CD31199E3F200721A5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 154BD8CE118478A900A7FCA2 /* Argyle-Test */;
+			remoteInfo = "Argyle-Test";
+		};
 		154BD8D4118478B700A7FCA2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -83,6 +105,8 @@
 		15234BCB119995CC00721A5E /* ILRunLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILRunLoop.h; sourceTree = "<group>"; };
 		15234BCC119995CC00721A5E /* ILRunLoop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILRunLoop.cpp; sourceTree = "<group>"; };
 		15234BD1119996D100721A5E /* ILSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSource.h; sourceTree = "<group>"; };
+		15234CB91199E3C000721A5E /* Argyle-Playground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Argyle-Playground"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15234CF01199E45A00721A5E /* main-Playground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "main-Playground.cpp"; sourceTree = "<group>"; };
 		154AD0A211921F0300950C9D /* ILMessageHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILMessageHub.h; sourceTree = "<group>"; };
 		154AD0A311921F0300950C9D /* ILMessageHub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILMessageHub.cpp; sourceTree = "<group>"; };
 		154BD8AC1184773500A7FCA2 /* ILObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILObject.h; sourceTree = "<group>"; };
@@ -121,6 +145,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		15234CB71199E3C000721A5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		154BD8CC118478A900A7FCA2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -143,6 +174,7 @@
 			children = (
 				D2AAC09D05546B4700DB518D /* libArgyle.dylib */,
 				154BD8CF118478A900A7FCA2 /* Argyle-Test.octest */,
+				15234CB91199E3C000721A5E /* Argyle-Playground */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +201,7 @@
 		08FB77ACFE841707C02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				15234CEF1199E44900721A5E /* Playground */,
 				15234BCA119995C200721A5E /* Run Loops */,
 				15EA0175119168C500C4296E /* Messages and Targets */,
 				32BAE0B70371A74B00C91783 /* Argyle_Prefix.pch */,
@@ -214,6 +247,14 @@
 				15234BD1119996D100721A5E /* ILSource.h */,
 			);
 			name = "Run Loops";
+			sourceTree = "<group>";
+		};
+		15234CEF1199E44900721A5E /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				15234CF01199E45A00721A5E /* main-Playground.cpp */,
+			);
+			name = Playground;
 			sourceTree = "<group>";
 		};
 		154BD8D8118478DA00A7FCA2 /* ILObject */ = {
@@ -327,6 +368,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		15234CB81199E3C000721A5E /* Argyle-Playground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15234CE21199E3FB00721A5E /* Build configuration list for PBXNativeTarget "Argyle-Playground" */;
+			buildPhases = (
+				15234CB61199E3C000721A5E /* Sources */,
+				15234CB71199E3C000721A5E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15234CD41199E3F200721A5E /* PBXTargetDependency */,
+			);
+			name = "Argyle-Playground";
+			productName = "Argyle-Playground";
+			productReference = 15234CB91199E3C000721A5E /* Argyle-Playground */;
+			productType = "com.apple.product-type.tool";
+		};
 		154BD8CE118478A900A7FCA2 /* Argyle-Test */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 154BD8D3118478AA00A7FCA2 /* Build configuration list for PBXNativeTarget "Argyle-Test" */;
@@ -378,6 +436,7 @@
 			targets = (
 				D2AAC09C05546B4700DB518D /* Argyle */,
 				154BD8CE118478A900A7FCA2 /* Argyle-Test */,
+				15234CB81199E3C000721A5E /* Argyle-Playground */,
 			);
 		};
 /* End PBXProject section */
@@ -409,6 +468,27 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		15234CB61199E3C000721A5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15234CC11199E3CF00721A5E /* ILData.cpp in Sources */,
+				15234CC21199E3CF00721A5E /* ILHash.cpp in Sources */,
+				15234CC31199E3CF00721A5E /* ILLinkedList.cpp in Sources */,
+				15234CC41199E3CF00721A5E /* ILList.cpp in Sources */,
+				15234CC51199E3CF00721A5E /* ILMap.cpp in Sources */,
+				15234CC61199E3CF00721A5E /* ILMessage.cpp in Sources */,
+				15234CC71199E3CF00721A5E /* ILMessageHub.cpp in Sources */,
+				15234CC81199E3CF00721A5E /* ILNumber.cpp in Sources */,
+				15234CC91199E3CF00721A5E /* ILObject.cpp in Sources */,
+				15234CCA1199E3CF00721A5E /* ILReleasePool.cpp in Sources */,
+				15234CCB1199E3CF00721A5E /* ILReleasePoolDelegate.cpp in Sources */,
+				15234CCC1199E3CF00721A5E /* ILRunLoop.cpp in Sources */,
+				15234CCD1199E3CF00721A5E /* ILThreadTarget.cpp in Sources */,
+				15234CF11199E45A00721A5E /* main-Playground.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		154BD8CB118478A900A7FCA2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,12 +533,18 @@
 				154AD0A611921F0300950C9D /* ILMessageHub.cpp in Sources */,
 				15234BC4119993E300721A5E /* ILThreadTarget.cpp in Sources */,
 				15234BCF119995CC00721A5E /* ILRunLoop.cpp in Sources */,
+				15234CCE1199E3D300721A5E /* ILReleasePoolDelegate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		15234CD41199E3F200721A5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 154BD8CE118478A900A7FCA2 /* Argyle-Test */;
+			targetProxy = 15234CD31199E3F200721A5E /* PBXContainerItemProxy */;
+		};
 		154BD8D5118478B700A7FCA2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 154BD8CE118478A900A7FCA2 /* Argyle-Test */;
@@ -467,6 +553,52 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		15234CBB1199E3C100721A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Argyle.h;
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Argyle-Playground";
+			};
+			name = Debug;
+		};
+		15234CBC1199E3C100721A5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Argyle.h;
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Argyle-Playground";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		154BD8D1118478AA00A7FCA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -586,6 +718,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		15234CE21199E3FB00721A5E /* Build configuration list for PBXNativeTarget "Argyle-Playground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15234CBB1199E3C100721A5E /* Debug */,
+				15234CBC1199E3C100721A5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		154BD8D3118478AA00A7FCA2 /* Build configuration list for PBXNativeTarget "Argyle-Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

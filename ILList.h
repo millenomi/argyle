@@ -15,8 +15,10 @@
 
 #include "ILLinkedList.h"
 
+/** A list iterator is returned by the ILList::iterate() method and provides you with a way to efficiently retrieve successive objects of the list. */ 
 class ILListIterator : public ILObject {
 public:
+	/** The first time this object is called, it will return the first object of the list. Subsequent times, it will return the object at index n of the list (where n is the number of time this method was previously called). Any call done after the last object in the list was returned will return NULL. */
 	virtual ILObject* next() = 0;
 };
 
@@ -41,22 +43,22 @@ public:
 	ILList(ILObject* firstObject, ...) __attribute__((sentinel));
 	
 	/** Creates a list containing the objects in the passed-in C array from index 0 to the index at position count - 1. The list does not require the C array to remain valid past the execution of this constructor. */
-	ILList(ILObject** objects, size_t count);
+	ILList(ILObject** objects, ILIndex count);
 	
 	/** Returns the number of objects in this list. */
-	size_t count();
+	ILIndex count();
 	
 	/** Adds the object at the end of the list. */
 	void addObject(ILObject* o);
 	
 	/** Adds an object at a given position in the list. */
-	void insertObjectAtIndex(size_t i, ILObject* o);
+	void insertObjectAtIndex(ILIndex i, ILObject* o);
 	
 	/** Removes the object at the given position in the list. */
-	void removeObjectAtIndex(size_t i);
+	void removeObjectAtIndex(ILIndex i);
 	
 	/** Returns the object at the given position in the list. */
-	ILObject* objectAtIndex(size_t i);
+	ILObject* objectAtIndex(ILIndex i);
 	
 	/** Executes the given function once for each object in the array, passing each of the objects in turn as arguments to each call. The functions are called synchronously.
 	 */
@@ -65,8 +67,15 @@ public:
 	/** Obtains the contents of this list as a C array.
 	 @param objects A C array at least #count() items long. On return, the indexes between 0 and #count() - 1 will contain this list's objects. */
 	void getAllObjects(ILObject** objects);
+	
+	/** Removes all objects from this list. */
+	void clear();
 
+	/** Returns an iterator object that allows you to iterate on the contents of this list. */
 	ILListIterator* iterate();
+	
+	void removeObject(ILObject* o);
+	bool containsObject(ILObject* o);
 	
 	// ILObject overrides.
 	virtual void* classIdentity();

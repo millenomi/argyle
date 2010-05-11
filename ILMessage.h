@@ -34,12 +34,14 @@ private:
 	ILObject* _payload;
 };
 
+
 /** A target is an object that is able to receive ILMessage objects (messages). */
 class ILTarget : public ILObject {
 public:
 	/** Delivers the message to this target. The message may be processed synchronously or asynchronously. */
 	virtual void deliverMessage(ILMessage* m) = 0;
 };
+
 
 /** The signature for a function that can be called by a ILFunctionTarget.
  @param m The message to receive.
@@ -86,30 +88,5 @@ private:
 		targetClass(receiverClass* me) : ILObjectTarget(me) {} \
 		virtual void deliverMessage(ILMessage* m) { ((receiverClass*)this->target())->method(m); } \
 	}
-
-// Example of use:
-/*
- 
- ILTargetForMethod(SomeClassTarget, SomeClass, doSomethingWithMessage);
- // later
- {
-	...
-	someComponent->setTarget(new SomeClassTarget(this));
-	...
- }
- 
- void doSomethingWithMessage(ILMessage* m) { ... }
-*/
-
-//class SomeClass : public ILObject {
-//public:
-//	virtual void someMethod(ILMessage* m) = 0;
-//};
-//
-//ILTargetForMethod(SomeClassTarget, SomeClass, someMethod);
-//
-//static void tester(SomeClass* x, ILMessage* y) {
-//	(new SomeClassTarget(x))->deliverMessage(y);
-//}
 
 #endif // #ifndef ILMessage_H

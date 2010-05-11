@@ -28,7 +28,7 @@ bool ILList::equals(ILObject* o) {
 		return false;
 	
 	ILList* l = (ILList*) o;
-	size_t count = this->count();
+	ILIndex count = this->count();
 	if (count != l->count())
 		return false;
 	
@@ -44,11 +44,11 @@ bool ILList::equals(ILObject* o) {
 
 uint64_t ILList::hash() {
 	uint64_t h = ILObject::hash();
-	size_t count = this->count();
+	ILIndex count = this->count();
 	ILObject** objects = (ILObject**) alloca(count * sizeof(void*));
 	
 	this->getAllObjects(objects);
-	size_t i; for (i = 0; i < count; i++)
+	ILIndex i; for (i = 0; i < count; i++)
 		h ^= objects[i]->hash();
 	
 	return h;
@@ -72,8 +72,8 @@ ILList::ILList(ILObject* firstObject, ...) : ILObject() {
 	va_end(l);
 }
 
-ILList::ILList(ILObject** objects, size_t count) : ILObject() {
-	size_t i; for (i = 0; i < count; i++)
+ILList::ILList(ILObject** objects, ILIndex count) : ILObject() {
+	ILIndex i; for (i = 0; i < count; i++)
 		this->addObject(objects[i]);
 }
 
@@ -82,7 +82,7 @@ void ILList::initialize() {
 	_content.setRelease((ILReleaseFunction) &ILRelease);
 }
 
-size_t ILList::count() {
+ILIndex ILList::count() {
 	return _content.count();
 }
 
@@ -90,21 +90,21 @@ void ILList::addObject(ILObject* o) {
 	_content.insertAtEnd(o);
 }
 
-void ILList::insertObjectAtIndex(size_t i, ILObject* o) {
+void ILList::insertObjectAtIndex(ILIndex i, ILObject* o) {
 	if (i == _content.count() - 1)
 		_content.insertAtEnd(o);
 	else
 		_content.insertBeforePosition(_content.positionAtIndex(i), o);
 }
 
-void ILList::removeObjectAtIndex(size_t i) {
+void ILList::removeObjectAtIndex(ILIndex i) {
 	if (i == _content.count() - 1)
 		_content.remove(_content.end());
 	else
 		_content.remove(_content.positionAtIndex(i));
 }
 
-ILObject* ILList::objectAtIndex(size_t i) {
+ILObject* ILList::objectAtIndex(ILIndex i) {
 	if (i == _content.count() - 1)
 		return (ILObject*) _content.end()->get();
 	else
@@ -135,7 +135,7 @@ bool ILList::canCopy() {
 }
 
 ILList* ILList::copy() {
-	size_t count = this->count();
+	ILIndex count = this->count();
 	ILObject** objects = (ILObject**) alloca(sizeof(ILObject*) * count);
 	this->getAllObjects(objects);
 	return new ILList(objects, count);
@@ -169,4 +169,34 @@ public:
 
 ILListIterator* ILList::iterate() {
 	return new ILListDefaultImplIterator(this, _content.beginning());
+}
+
+// ~~
+
+void ILList::clear() {
+	_content.clear();
+}
+
+void ILList::removeObject(ILObject* o) {
+	ILListIterator* i = this->copy()->iterate();
+
+	ILIndex index = 0;
+	ILObject* x;
+	while ((x = i->next())) {
+		if (o->equals(x))
+			this->removeObjectAtIndex(index);
+		else
+			index++;
+	}
+}
+
+bool ILList::containsObject(ILObject* o) {
+	ILListIterator* i = this->copy()->iterate();
+	ILObject* x;
+	while ((x = i->next())) {
+		if (o->equals(x))
+			return true;
+	}
+	
+	return false;
 }

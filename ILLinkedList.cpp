@@ -84,7 +84,7 @@ ILLinkedListPosition* ILLinkedList::end() {
 	return _tail;
 }
 
-size_t ILLinkedList::count() {
+ILIndex ILLinkedList::count() {
 	return _count;
 }
 
@@ -207,7 +207,7 @@ ILLinkedListPosition* ILLinkedList::insertBeforePosition(ILLinkedListPosition* s
 
 void ILLinkedList::getAllValues(void** values) {
 	ILLinkedListLink* here = _head;
-	size_t i = 0;
+	ILIndex i = 0;
 	
 	while (here) {
 		values[i] = here->_value;
@@ -228,7 +228,7 @@ void ILLinkedList::describe() {
 	fprintf(stderr, "-- <end ILLinkedList>\n");
 }
 
-ILLinkedListPosition* ILLinkedList::positionAtIndex(size_t index) {
+ILLinkedListPosition* ILLinkedList::positionAtIndex(ILIndex index) {
 	ILLinkedListLink* here = _head;
 	
 	while (index > 0) {

@@ -55,7 +55,7 @@ extern void ILRelease(ILObject* o);
 
 template <class T>
 T* ILRetain(T* x) {
-	return (T*) ILPerformRetain(x);
+	return (T*) ILPerformRetain((ILObject*) x);
 }
 
 
