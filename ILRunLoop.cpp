@@ -44,6 +44,7 @@ void ILRunLoop::spin() {
 	ILSource* s;
 	
 	while ((s = (ILSource*) eachSource->next())) {
+		ILReleasePool pool;
 		if (_sources->containsObject((ILObject*) s))
 			s->performPeriodicWork();
 	}
