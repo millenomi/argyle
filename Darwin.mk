@@ -1,2 +1,6 @@
 PLATFORM_DYLIB_SUFFIX = .dylib
 PLATFORM_LIB_PREFIX = lib
+
+ifeq ($(DARWIN_FOUR_WAY_UNIVERSAL),YES)
+PLATFORM_CXXFLAGS = -arch i386 -arch ppc -arch x86_64
+endif
