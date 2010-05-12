@@ -62,9 +62,12 @@ bool ILObject::release() {
 }
 
 uint64_t ILObject::retainCount() {
+	uint64_t rc;
 	pthread_mutex_lock(&ILRetainReleaseMutex);
-	return _retainCount;
+	rc = _retainCount;
 	pthread_mutex_unlock(&ILRetainReleaseMutex);
+	
+	return rc;
 }
 
 
