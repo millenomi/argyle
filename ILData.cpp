@@ -83,7 +83,7 @@ ILData* ILData::copy() {
 
 void ILData::appendBytes(uint8_t* newBytes, size_t newBytesLength) {
 	if (!_owns) {
-		fprintf(stderr, "%s: Appending bytes requires a buffer that owns its own underlying buffer. Use ->copy() to make a copy of this ILData object before appending bytes. (This is a violation of ILData's contract and WILL be remedied in a future version of this library.)", __func__);
+		fprintf(stderr, "%s: Appending bytes requires a ILData instance that owns its own underlying buffer. Use ->copy() to make a copy of this ILData object before appending bytes. (This is a violation of ILData's contract and WILL be remedied in a future version of this library.)", __func__);
 		abort();
 	}
 	
