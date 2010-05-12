@@ -14,7 +14,7 @@ This library is **NOT**:
 * Idiomatic C++;
 * Beautiful by any metric.
 
-**THIS LIBRARY IS IN PRE-ALPHA STATE. IT'S NOT SHIPPING. IT MAY CONTAIN TONS OF BUGS (including concurrency bugs — the worst kind EVER).** That said, I fully intend to use it as a foundation on my cross-platform applications going forward, so it can only get better.**
+**THIS LIBRARY IS IN PRE-ALPHA STATE. IT'S NOT SHIPPING. IT MAY CONTAIN TONS OF BUGS (including concurrency bugs — the worst kind EVER).** That said, I fully intend to use it as a foundation on my cross-platform applications going forward, so it can only get better.
 
 ## Building the Core
 
@@ -28,9 +28,9 @@ That said, there are two built-in ways to build the Core:
 
 * The included Makefile can produce static and dynamic libraries out of the code. It's flexible enough to be adapted to basically any platform GCC can produce code for. (Sample platform variants are included for Darwin, Google's Native Client SDK and the Palm webOS PDK.) Example of use:
 
-	make PLATFORM=Darwin
+		make PLATFORM=Darwin
 	
-The default platform name is equal to the result of the `uname` tool (so, on Mac OS X it's `Darwin` by default).
+	The default platform name is equal to the result of the `uname` tool (so, on Mac OS X it's `Darwin` by default).
 
 ## Using the Core
 
