@@ -12,10 +12,11 @@ RANLIB = ranlib
 PLATFORM_STATIC_LIB_SUFFIX = .a
 PLATFORM_LIB_PREFIX = lib
 
-PLATFORM = $(shell uname)
-include $(PLATFORM).mk
+PLATFORM = $(shell uname).mk
+PLATFORM_NAME = $(patsubst %.mk,%,$(PLATFORM))
+include $(PLATFORM)
 
-PRODUCT_NAME = PlatformCore-$(PLATFORM)
+PRODUCT_NAME = PlatformCore-$(PLATFORM_NAME)
 
 CXXFLAGS = -g -Os $(PLATFORM_CXXFLAGS)
 LDFLAGS = -lpthread $(PLATFORM_LDFLAGS)

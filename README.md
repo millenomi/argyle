@@ -28,7 +28,7 @@ That said, there are two built-in ways to build the Core:
 
 * The included Makefile can produce static and dynamic libraries out of the code. It's flexible enough to be adapted to basically any platform GCC can produce code for. (Sample platform variants are included for Darwin, Google's Native Client SDK and the Palm webOS PDK.) Example of use:
 
-		make PLATFORM=Darwin
+		make PLATFORM=Darwin.mk
 	
 	The default platform name is equal to the result of the `uname` tool (so, on Mac OS X it's `Darwin` by default).
 
