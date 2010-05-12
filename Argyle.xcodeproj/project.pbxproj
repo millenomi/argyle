@@ -72,6 +72,10 @@
 		156A8D2F118E0D4800C4D67E /* ILMapTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 156A8D2E118E0D4800C4D67E /* ILMapTest.mm */; };
 		156A8D30118E0D4C00C4D67E /* ILMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 156A8CCB118E059500C4D67E /* ILMap.cpp */; };
 		157282FE118CBA0400588AF1 /* ILHashTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 157282FD118CBA0400588AF1 /* ILHashTest.mm */; };
+		15BB4CA2119B2BCB00E8E19D /* ILString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15BB4CA1119B2BCB00E8E19D /* ILString.cpp */; };
+		15BB4CA3119B2BCB00E8E19D /* ILString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15BB4CA1119B2BCB00E8E19D /* ILString.cpp */; };
+		15BB4CA4119B2BCB00E8E19D /* ILString.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BB4CA0119B2BCB00E8E19D /* ILString.h */; };
+		15BB4CA5119B2BCB00E8E19D /* ILString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15BB4CA1119B2BCB00E8E19D /* ILString.cpp */; };
 		15EA0178119168D100C4296E /* ILMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15EA0177119168D100C4296E /* ILMessage.cpp */; };
 		15EA0179119168D100C4296E /* ILMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 15EA0176119168D100C4296E /* ILMessage.h */; };
 		15EA017A119168D100C4296E /* ILMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15EA0177119168D100C4296E /* ILMessage.cpp */; };
@@ -82,7 +86,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 154BD8CE118478A900A7FCA2 /* Argyle-Test */;
+			remoteGlobalIDString = 154BD8CE118478A900A7FCA2;
 			remoteInfo = "Argyle-Test";
 		};
 		154BD8D4118478B700A7FCA2 /* PBXContainerItemProxy */ = {
@@ -145,6 +149,8 @@
 		156A8D2E118E0D4800C4D67E /* ILMapTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILMapTest.mm; sourceTree = "<group>"; };
 		157282FC118CBA0400588AF1 /* ILHashTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILHashTest.h; sourceTree = "<group>"; };
 		157282FD118CBA0400588AF1 /* ILHashTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILHashTest.mm; sourceTree = "<group>"; };
+		15BB4CA0119B2BCB00E8E19D /* ILString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILString.h; sourceTree = "<group>"; };
+		15BB4CA1119B2BCB00E8E19D /* ILString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILString.cpp; sourceTree = "<group>"; };
 		15EA0176119168D100C4296E /* ILMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILMessage.h; sourceTree = "<group>"; };
 		15EA0177119168D100C4296E /* ILMessage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILMessage.cpp; sourceTree = "<group>"; };
 		32BAE0B70371A74B00C91783 /* Argyle_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argyle_Prefix.pch; sourceTree = "<group>"; };
@@ -211,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				32BAE0B70371A74B00C91783 /* Argyle_Prefix.pch */,
+				15BB4C99119B2BB400E8E19D /* String */,
 				15234DCB119A965C00721A5E /* Set */,
 				15234CEF1199E44900721A5E /* Playground */,
 				15234BCA119995C200721A5E /* Run Loops */,
@@ -345,6 +352,15 @@
 			name = Map;
 			sourceTree = "<group>";
 		};
+		15BB4C99119B2BB400E8E19D /* String */ = {
+			isa = PBXGroup;
+			children = (
+				15BB4CA0119B2BCB00E8E19D /* ILString.h */,
+				15BB4CA1119B2BCB00E8E19D /* ILString.cpp */,
+			);
+			name = String;
+			sourceTree = "<group>";
+		};
 		15EA0175119168C500C4296E /* Messages and Targets */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +408,7 @@
 				15234BCE119995CC00721A5E /* ILRunLoop.h in Headers */,
 				15234BD2119996D100721A5E /* ILSource.h in Headers */,
 				15234DD0119A966E00721A5E /* ILSet.h in Headers */,
+				15BB4CA4119B2BCB00E8E19D /* ILString.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +534,7 @@
 				15234CCD1199E3CF00721A5E /* ILThreadTarget.cpp in Sources */,
 				15234CF11199E45A00721A5E /* main-Playground.cpp in Sources */,
 				15234DCE119A966E00721A5E /* ILSet.cpp in Sources */,
+				15BB4CA2119B2BCB00E8E19D /* ILString.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +565,7 @@
 				15234BCD119995CC00721A5E /* ILRunLoop.cpp in Sources */,
 				15234DCF119A966E00721A5E /* ILSet.cpp in Sources */,
 				15234DF3119A9B5D00721A5E /* ILSetTest.mm in Sources */,
+				15BB4CA3119B2BCB00E8E19D /* ILString.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +587,7 @@
 				15234BCF119995CC00721A5E /* ILRunLoop.cpp in Sources */,
 				15234CCE1199E3D300721A5E /* ILReleasePoolDelegate.cpp in Sources */,
 				15234DD1119A966E00721A5E /* ILSet.cpp in Sources */,
+				15BB4CA5119B2BCB00E8E19D /* ILString.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

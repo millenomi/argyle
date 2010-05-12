@@ -29,6 +29,8 @@ public:
 	uint8_t* bytes();
 	size_t length();
 	
+	void appendBytes(uint8_t* bytes, size_t length);
+	
 	// ILCopiable overrides.
 	virtual bool canCopy();
 	virtual ILData* copy();

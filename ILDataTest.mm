@@ -42,7 +42,8 @@ static size_t wowSize = sizeof(uint8_t) * 3;
 	STAssertTrue(d->length() == helloSize, @"the length was init'd correctly");
 }
 
-- (void) testComparison {
+- (void) testComparison;
+{
 	ILReleasePool pool;
 
 	ILData* d = new ILData(hello, helloSize);
@@ -57,7 +58,8 @@ static size_t wowSize = sizeof(uint8_t) * 3;
 	STAssertFalse(d->equals(d3), @"equals works");	
 }
 
-- (void) testCopy {
+- (void) testCopy;
+{
 	ILReleasePool pool;
 	
 	ILData* d = new ILData(hello, helloSize);
@@ -66,6 +68,20 @@ static size_t wowSize = sizeof(uint8_t) * 3;
 	STAssertTrue(d->equals(d2), @"equals works");
 	STAssertTrue(d2->equals(d), @"equals is symmetric");
 	STAssertTrue(d->hash() == d2->hash(), @"equal strings have the same hash");
+}
+
+- (void) testAppend;
+{
+	ILReleasePool pool;
+	
+	uint8_t hell[] = { 'H', 'e', 'l', 'l' };
+	ILData* d = new ILData(hell, sizeof(uint8_t) * 4);
+	
+	uint8_t o = 'o';
+	d->appendBytes(&o, 1);
+	
+	ILData* d2 = new ILData(hello, helloSize);
+	STAssertTrue(d->equals(d2), @"Appending made strings equal");
 }
 
 @end

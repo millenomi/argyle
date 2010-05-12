@@ -78,3 +78,22 @@ bool ILData::canCopy() {
 ILData* ILData::copy() {
 	return new ILData(this->bytes(), this->length());
 }
+
+// ~~~
+
+void ILData::appendBytes(uint8_t* newBytes, size_t newBytesLength) {
+	if (!_owns) {
+		fprintf(stderr, "%s: Appending bytes requires a buffer that owns its own underlying buffer. Use ->copy() to make a copy of this ILData object before appending bytes. (This is a violation of ILData's contract and WILL be remedied in a future version of this library.)", __func__);
+		abort();
+	}
+	
+	if (newBytesLength > 0) {
+		size_t newLength = _length + newBytesLength;
+		_bytes = (uint8_t*) realloc(_bytes, newLength);
+		
+		uint8_t* newRegion = _bytes + _length;
+		memcpy(newRegion, newBytes, newBytesLength);
+		
+		_length = newLength;
+	}
+}
