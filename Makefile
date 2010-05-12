@@ -11,7 +11,8 @@ OBJECT_FILES = $(patsubst %.cpp,%.lo,$(SOURCES))
 
 PRODUCT_NAME = PlatformCore
 
-include $(shell uname).mk
+PLATFORM = $(shell uname)
+include $(PLATFORM).mk
 
 STATIC_LIBRARY = $(PLATFORM_LIB_PREFIX)$(PRODUCT_NAME).la
 DYNAMIC_LIBRARY = $(PLATFORM_LIB_PREFIX)$(PRODUCT_NAME)$(PLATFORM_DYLIB_SUFFIX)
