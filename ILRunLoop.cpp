@@ -40,7 +40,7 @@ void ILRunLoop::spinForUpTo(ILTimeInterval seconds) {
 }
 
 void ILRunLoop::spin() {
-	ILListIterator* eachSource = _sources->copy()->iterate();
+	ILSetIterator* eachSource = _sources->copy()->iterate();
 	ILSource* s;
 	
 	while ((s = (ILSource*) eachSource->next())) {
@@ -50,7 +50,7 @@ void ILRunLoop::spin() {
 }
 
 ILRunLoop::ILRunLoop() : ILTarget() {
-	_sources = ILRetain(new ILList());
+	_sources = ILRetain(new ILSet());
 	_messageHub = NULL;
 	_target = NULL;
 }

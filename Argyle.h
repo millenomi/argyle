@@ -18,6 +18,7 @@
 #include "ILLinkedList.h"
 #include "ILList.h"
 #include "ILMap.h"
+#include "ILSet.h"
 
 #endif // #ifdef __cplusplus
 

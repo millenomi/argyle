@@ -40,7 +40,7 @@ public:
 	static ILRunLoop* current();
 	
 private:
-	ILList* _sources;
+	ILSet* _sources;
 	
 	ILMessageHub* _messageHub;
 	ILTarget* _target;	

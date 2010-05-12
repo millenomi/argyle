@@ -52,6 +52,14 @@ void ILHash::addValue(void* value) {
 	uint64_t hash = this->hashForValue(value);
 	size_t i = hash % _bucketsCount;
 	
+	ILLinkedListPosition* here = _buckets[i].beginning();
+	while (here) {
+		if (this->equals(here->get(), value))
+			return;
+		
+		here = here->next();
+	}
+	
 	_buckets[i].insertAtEnd(value);
 	
 	_count++;
