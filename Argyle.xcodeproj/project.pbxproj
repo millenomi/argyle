@@ -76,6 +76,38 @@
 		15BB4CA3119B2BCB00E8E19D /* ILString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15BB4CA1119B2BCB00E8E19D /* ILString.cpp */; };
 		15BB4CA4119B2BCB00E8E19D /* ILString.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BB4CA0119B2BCB00E8E19D /* ILString.h */; };
 		15BB4CA5119B2BCB00E8E19D /* ILString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15BB4CA1119B2BCB00E8E19D /* ILString.cpp */; };
+		15DCD881119F4491002746F0 /* ILObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 154BD8AC1184773500A7FCA2 /* ILObject.h */; };
+		15DCD882119F4491002746F0 /* ILObjectTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 154BD8D9118478E800A7FCA2 /* ILObjectTest.h */; };
+		15DCD883119F4491002746F0 /* ILReleasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 154BD8FE11847AEB00A7FCA2 /* ILReleasePool.h */; };
+		15DCD884119F4491002746F0 /* ILData.h in Headers */ = {isa = PBXBuildFile; fileRef = 154BDA4A1184875000A7FCA2 /* ILData.h */; };
+		15DCD885119F4491002746F0 /* Argyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 154BDA501184877E00A7FCA2 /* Argyle.h */; };
+		15DCD886119F4491002746F0 /* ILDataTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 154BDA8B11848CF200A7FCA2 /* ILDataTest.h */; };
+		15DCD887119F4491002746F0 /* ILNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = 154BDAD41184914900A7FCA2 /* ILNumber.h */; };
+		15DCD888119F4491002746F0 /* ILList.h in Headers */ = {isa = PBXBuildFile; fileRef = 15015E3B118B3ECD00972828 /* ILList.h */; };
+		15DCD889119F4491002746F0 /* ILListTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 15015E51118B41E200972828 /* ILListTest.h */; };
+		15DCD88A119F4491002746F0 /* ILHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 155E5054118B8B940036F741 /* ILHash.h */; };
+		15DCD88B119F4491002746F0 /* ILMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 15EA0176119168D100C4296E /* ILMessage.h */; };
+		15DCD88C119F4491002746F0 /* ILMessageHub.h in Headers */ = {isa = PBXBuildFile; fileRef = 154AD0A211921F0300950C9D /* ILMessageHub.h */; };
+		15DCD88D119F4491002746F0 /* ILThreadTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 15234BC0119993E300721A5E /* ILThreadTarget.h */; };
+		15DCD88E119F4491002746F0 /* ILRunLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = 15234BCB119995CC00721A5E /* ILRunLoop.h */; };
+		15DCD88F119F4491002746F0 /* ILSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 15234BD1119996D100721A5E /* ILSource.h */; };
+		15DCD890119F4491002746F0 /* ILSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 15234DCC119A966E00721A5E /* ILSet.h */; };
+		15DCD891119F4491002746F0 /* ILString.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BB4CA0119B2BCB00E8E19D /* ILString.h */; };
+		15DCD892119F4498002746F0 /* ILObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BD8AD1184773500A7FCA2 /* ILObject.cpp */; };
+		15DCD893119F4498002746F0 /* ILReleasePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BD8FF11847AEB00A7FCA2 /* ILReleasePool.cpp */; };
+		15DCD894119F4498002746F0 /* ILData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BDA4B1184875000A7FCA2 /* ILData.cpp */; };
+		15DCD895119F4498002746F0 /* ILNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154BDAD51184914900A7FCA2 /* ILNumber.cpp */; };
+		15DCD896119F4498002746F0 /* ILLinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15015CA5118AE35400972828 /* ILLinkedList.cpp */; };
+		15DCD897119F4498002746F0 /* ILList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15015E3C118B3ECD00972828 /* ILList.cpp */; };
+		15DCD898119F4498002746F0 /* ILHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 155E5055118B8B940036F741 /* ILHash.cpp */; };
+		15DCD899119F4498002746F0 /* ILMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 156A8CCB118E059500C4D67E /* ILMap.cpp */; };
+		15DCD89A119F4498002746F0 /* ILMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15EA0177119168D100C4296E /* ILMessage.cpp */; };
+		15DCD89B119F4498002746F0 /* ILMessageHub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 154AD0A311921F0300950C9D /* ILMessageHub.cpp */; };
+		15DCD89C119F4498002746F0 /* ILThreadTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15234BC1119993E300721A5E /* ILThreadTarget.cpp */; };
+		15DCD89D119F4498002746F0 /* ILRunLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15234BCC119995CC00721A5E /* ILRunLoop.cpp */; };
+		15DCD89E119F4498002746F0 /* ILReleasePoolDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 156A8C08118DBFE800C4D67E /* ILReleasePoolDelegate.cpp */; };
+		15DCD89F119F4498002746F0 /* ILSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15234DCD119A966E00721A5E /* ILSet.cpp */; };
+		15DCD8A0119F4498002746F0 /* ILString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15BB4CA1119B2BCB00E8E19D /* ILString.cpp */; };
 		15EA0178119168D100C4296E /* ILMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15EA0177119168D100C4296E /* ILMessage.cpp */; };
 		15EA0179119168D100C4296E /* ILMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 15EA0176119168D100C4296E /* ILMessage.h */; };
 		15EA017A119168D100C4296E /* ILMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15EA0177119168D100C4296E /* ILMessage.cpp */; };
@@ -151,6 +183,7 @@
 		157282FD118CBA0400588AF1 /* ILHashTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILHashTest.mm; sourceTree = "<group>"; };
 		15BB4CA0119B2BCB00E8E19D /* ILString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILString.h; sourceTree = "<group>"; };
 		15BB4CA1119B2BCB00E8E19D /* ILString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILString.cpp; sourceTree = "<group>"; };
+		15DCD87A119F447F002746F0 /* libArgyle-iPhone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libArgyle-iPhone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15EA0176119168D100C4296E /* ILMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILMessage.h; sourceTree = "<group>"; };
 		15EA0177119168D100C4296E /* ILMessage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILMessage.cpp; sourceTree = "<group>"; };
 		32BAE0B70371A74B00C91783 /* Argyle_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argyle_Prefix.pch; sourceTree = "<group>"; };
@@ -174,6 +207,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		15DCD878119F447F002746F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2AAC09B05546B4700DB518D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -190,6 +230,7 @@
 				D2AAC09D05546B4700DB518D /* libArgyle.dylib */,
 				154BD8CF118478A900A7FCA2 /* Argyle-Test.octest */,
 				15234CB91199E3C000721A5E /* Argyle-Playground */,
+				15DCD87A119F447F002746F0 /* libArgyle-iPhone.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -388,6 +429,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		15DCD876119F447F002746F0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15DCD881119F4491002746F0 /* ILObject.h in Headers */,
+				15DCD882119F4491002746F0 /* ILObjectTest.h in Headers */,
+				15DCD883119F4491002746F0 /* ILReleasePool.h in Headers */,
+				15DCD884119F4491002746F0 /* ILData.h in Headers */,
+				15DCD885119F4491002746F0 /* Argyle.h in Headers */,
+				15DCD886119F4491002746F0 /* ILDataTest.h in Headers */,
+				15DCD887119F4491002746F0 /* ILNumber.h in Headers */,
+				15DCD888119F4491002746F0 /* ILList.h in Headers */,
+				15DCD889119F4491002746F0 /* ILListTest.h in Headers */,
+				15DCD88A119F4491002746F0 /* ILHash.h in Headers */,
+				15DCD88B119F4491002746F0 /* ILMessage.h in Headers */,
+				15DCD88C119F4491002746F0 /* ILMessageHub.h in Headers */,
+				15DCD88D119F4491002746F0 /* ILThreadTarget.h in Headers */,
+				15DCD88E119F4491002746F0 /* ILRunLoop.h in Headers */,
+				15DCD88F119F4491002746F0 /* ILSource.h in Headers */,
+				15DCD890119F4491002746F0 /* ILSet.h in Headers */,
+				15DCD891119F4491002746F0 /* ILString.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2AAC09905546B4700DB518D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -450,6 +515,23 @@
 			productReference = 154BD8CF118478A900A7FCA2 /* Argyle-Test.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		15DCD879119F447F002746F0 /* Argyle-iPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15DCD880119F4483002746F0 /* Build configuration list for PBXNativeTarget "Argyle-iPhone" */;
+			buildPhases = (
+				15DCD876119F447F002746F0 /* Headers */,
+				15DCD877119F447F002746F0 /* Sources */,
+				15DCD878119F447F002746F0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Argyle-iPhone";
+			productName = "Argyle-iPhone";
+			productReference = 15DCD87A119F447F002746F0 /* libArgyle-iPhone.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		D2AAC09C05546B4700DB518D /* Argyle */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB916008733D950010E9CD /* Build configuration list for PBXNativeTarget "Argyle" */;
@@ -484,6 +566,7 @@
 				D2AAC09C05546B4700DB518D /* Argyle */,
 				154BD8CE118478A900A7FCA2 /* Argyle-Test */,
 				15234CB81199E3C000721A5E /* Argyle-Playground */,
+				15DCD879119F447F002746F0 /* Argyle-iPhone */,
 			);
 		};
 /* End PBXProject section */
@@ -566,6 +649,28 @@
 				15234DCF119A966E00721A5E /* ILSet.cpp in Sources */,
 				15234DF3119A9B5D00721A5E /* ILSetTest.mm in Sources */,
 				15BB4CA3119B2BCB00E8E19D /* ILString.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15DCD877119F447F002746F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15DCD892119F4498002746F0 /* ILObject.cpp in Sources */,
+				15DCD893119F4498002746F0 /* ILReleasePool.cpp in Sources */,
+				15DCD894119F4498002746F0 /* ILData.cpp in Sources */,
+				15DCD895119F4498002746F0 /* ILNumber.cpp in Sources */,
+				15DCD896119F4498002746F0 /* ILLinkedList.cpp in Sources */,
+				15DCD897119F4498002746F0 /* ILList.cpp in Sources */,
+				15DCD898119F4498002746F0 /* ILHash.cpp in Sources */,
+				15DCD899119F4498002746F0 /* ILMap.cpp in Sources */,
+				15DCD89A119F4498002746F0 /* ILMessage.cpp in Sources */,
+				15DCD89B119F4498002746F0 /* ILMessageHub.cpp in Sources */,
+				15DCD89C119F4498002746F0 /* ILThreadTarget.cpp in Sources */,
+				15DCD89D119F4498002746F0 /* ILRunLoop.cpp in Sources */,
+				15DCD89E119F4498002746F0 /* ILReleasePoolDelegate.cpp in Sources */,
+				15DCD89F119F4498002746F0 /* ILSet.cpp in Sources */,
+				15DCD8A0119F4498002746F0 /* ILString.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +775,7 @@
 				ILABS_RUN_UNIT_TESTS_VIA_XCODE_EXECUTION = NO;
 				INFOPLIST_FILE = "Argyle-Test-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Cocoa,
@@ -710,6 +816,37 @@
 			};
 			name = Release;
 		};
+		15DCD87B119F4480002746F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ONLY_ACTIVE_ARCH = NO;
+				PREBINDING = NO;
+				PRODUCT_NAME = "Argyle-iPhone";
+				SDKROOT = iphoneos3.2;
+			};
+			name = Debug;
+		};
+		15DCD87C119F4480002746F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				PREBINDING = NO;
+				PRODUCT_NAME = "Argyle-iPhone";
+				SDKROOT = iphoneos3.2;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		1DEB916108733D950010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5073E0C709E734A800EC74B6 /* ArgyleTarget.xcconfig */;
@@ -723,6 +860,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Argyle_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				ONLY_ACTIVE_ARCH = NO;
 			};
 			name = Debug;
 		};
@@ -786,6 +924,15 @@
 			buildConfigurations = (
 				154BD8D1118478AA00A7FCA2 /* Debug */,
 				154BD8D2118478AA00A7FCA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15DCD880119F4483002746F0 /* Build configuration list for PBXNativeTarget "Argyle-iPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15DCD87B119F4480002746F0 /* Debug */,
+				15DCD87C119F4480002746F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

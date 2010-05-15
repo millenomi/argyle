@@ -3,8 +3,18 @@ LIBTOOL = glibtool
 
 # for now, GCC is required to build Platform Core.
 
+BUILT_PRODUCTS_DIR = .
+ifeq ($(BUILT_PRODUCTS_DIR),)
+	$(error Built products dir is empty; use '.' for the sources directory.)
+endif
+
+INTERMEDIATE_PRODUCTS_DIR = .
+ifeq ($(INTERMEDIATE_PRODUCTS_DIR),)
+	$(error Intermediate products dir is empty; use '.' for the sources directory.)
+endif
+
 SOURCES = $(wildcard IL*.cpp)
-OBJECT_FILES = $(patsubst %.cpp,%.o,$(SOURCES))
+OBJECT_FILES = $(addprefix $(INTERMEDIATE_PRODUCTS_DIR)/,$(patsubst %.cpp,%.o,$(SOURCES)))
 
 CXX = g++
 AR = ar
@@ -22,8 +32,8 @@ CXXFLAGS = -g -Os $(PLATFORM_CXXFLAGS)
 LDFLAGS = -lpthread $(PLATFORM_LDFLAGS)
 
 
-STATIC_LIBRARY = $(PLATFORM_LIB_PREFIX)$(PRODUCT_NAME)$(PLATFORM_STATIC_LIB_SUFFIX)
-DYNAMIC_LIBRARY = $(PLATFORM_LIB_PREFIX)$(PRODUCT_NAME)$(PLATFORM_DYLIB_SUFFIX)
+STATIC_LIBRARY = $(BUILT_PRODUCTS_DIR)/$(PLATFORM_LIB_PREFIX)$(PRODUCT_NAME)$(PLATFORM_STATIC_LIB_SUFFIX)
+DYNAMIC_LIBRARY = $(BUILT_PRODUCTS_DIR)/$(PLATFORM_LIB_PREFIX)$(PRODUCT_NAME)$(PLATFORM_DYLIB_SUFFIX)
 
 ifeq ($(PLATFORM_DYLIB_SUFFIX),)
 $(warning No dylib suffix specified for this platform; dylibs disabled.)
@@ -40,19 +50,19 @@ endif
 all: $(OBJECT_FILES) $(LIBRARIES_TO_BUILD)
 .PHONY: clean
 
-%.o: %.cpp
+$(INTERMEDIATE_PRODUCTS_DIR)/%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c "$<" -o "$@"
 
 clean:
-	-rm *.o
-	-rm *.a
+	-rm $(INTERMEDIATE_PRODUCTS_DIR)/*.o
+	-rm $(BUILT_PRODUCTS_DIR)/*.a
 	-rmdir .libs
 ifneq ($(PLATFORM_SUPPORTS_DYLIBS),NO)
-	-test x$(PLATFORM_DYLIB_SUFFIX) != x && rm *$(PLATFORM_DYLIB_SUFFIX)
+	-test x$(PLATFORM_DYLIB_SUFFIX) != x && rm $(BUILT_PRODUCTS_DIR)/*$(PLATFORM_DYLIB_SUFFIX)
 endif
 
 $(STATIC_LIBRARY): $(OBJECT_FILES)
-	$(AR) rcs "$@" $<
+	$(AR) rcs "$@" $(OBJECT_FILES)
 	$(RANLIB) "$@"
 
 $(DYNAMIC_LIBRARY): $(OBJECT_FILES)
