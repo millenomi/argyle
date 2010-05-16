@@ -39,11 +39,18 @@ public:
 	
 	static ILRunLoop* current();
 	
+	void signalReady();
+	void signalByDeliveringMessage(ILMessage* m);
+	
 private:
 	ILSet* _sources;
 	
 	ILMessageHub* _messageHub;
-	ILTarget* _target;	
+	ILTarget* _target;
+	
+	int _pipe[2];
 };
+
+extern void* const ILRunLoopSignalReadyMessage;
 
 #endif // #ifndef ILRunLoop_H

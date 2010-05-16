@@ -8,6 +8,7 @@
  */
 
 #include "ILThreadTarget.h"
+#include "ILRunLoop.h"
 
 ILThreadTarget::ILThreadTarget(ILTarget* t) {
 	_deliveryTarget = ILRetain(t);
@@ -33,6 +34,9 @@ void ILThreadTarget::deliverMessage(ILMessage* m) {
 	pthread_mutex_lock(&_mutex);
 	_messages->addObject(m);
 	pthread_mutex_unlock(&_mutex);
+	
+	if (this->runLoop())
+		this->runLoop()->signalReady();
 }
 
 void ILThreadTarget::deliverPendingMessagesOnThisThread() {
