@@ -8,7 +8,7 @@
  */
 
 #include "ILObject.h"
-#include <iostream>
+#include <stdio.h>
 
 #include <pthread.h>
 #include <stdlib.h>
@@ -53,7 +53,7 @@ bool ILObject::release() {
 		_retainCount = 0;
 		result = true;
 	} else {
-		std::cerr << "Overreleased object!\n";
+		fprintf(stderr, "Overreleased object!\n");
 		abort();
 	}
 

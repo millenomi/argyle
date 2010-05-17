@@ -15,10 +15,10 @@
 #include <math.h>
 #include <iostream>
 
+ILTimeInterval ILAbsoluteTimeDistantFuture = NAN;
+
 static char ILRunLoopUnusedValue = 0;
 void* const ILRunLoopSignalReadyMessage = &ILRunLoopUnusedValue;
-
-ILTargetForMethod(ILRunLoopSignalTarget, ILRunLoop, signalByDeliveringMessage);
 
 ILTimeInterval ILGetAbsoluteTime() {
 	struct timeval tv;
@@ -38,39 +38,54 @@ void ILRunLoop::removeSource(ILSource* s) {
 	_sources->removeObject((ILObject*) s);
 }
 
-
-void ILRunLoop::spinForUpTo(ILTimeInterval seconds) {	
+void ILRunLoop::spinForAboutUpTo(ILTimeInterval seconds) {
 	ILTimeInterval start = ILGetAbsoluteTime();
 
-	struct timeval tv;
-	tv.tv_sec = (unsigned int) floor(seconds);
-	tv.tv_usec = (unsigned int) ((seconds - floor(seconds)) * 1000000.0);
+	if (pthread_mutex_lock(&_mutex) != 0) {
+		fprintf(stderr, "Error: we couldn't lock a run loop's private mutex -- this should never have happened.\n");
+		abort();
+	}
+	
+	long secondsSecs = (long) floor(seconds);
+	long secondNsecs = (long) ((seconds - floor(seconds)) * 1000000000.0);
 	
 	do {
 		if (_sources->count() == 0)
 			return;
+				
+		long partSecs, partNsecs;
+	
+		partSecs = secondsSecs;
+		partNsecs = secondNsecs;
 		
-		fd_set fds;
-		FD_ZERO(&fds);
-		FD_SET(_pipe[0], &fds);
-		
-		select(_pipe[0] + 1 /* WHYYYYY */, &fds, NULL, &fds, &tv);
-		// we don't check for errors --
-		// if error, then something went wrong with the pipe, which it shouldn't.
-		// if timeout, it's fine -- we spin once, then quit when the while sees our time is up.
-		// if the pipe has something to read, well, ok.
+		if (partSecs > 0 || (partSecs == 0 && partNsecs > 0)) {
+			struct timeval td;
+			gettimeofday(&td, NULL);
+			
+			struct timespec ts;
+			ts.tv_sec = td.tv_sec + partSecs;
+			ts.tv_nsec = partNsecs + td.tv_usec * 1000.0;
+			
+			pthread_cond_timedwait(&_signaler, &_mutex, &ts);
+			// we don't check for errors --
+			// if error, then something went wrong with the cond, which it shouldn't.
+			// if timeout, it's fine -- we spin once, then quit when the while sees our time is up.
+			// if the pipe has something to read, well, ok.
+		}
 		
 		this->spin();
+		
 	} while (ILGetAbsoluteTime() - start < seconds);
+	
+	if (pthread_mutex_unlock(&_mutex) != 0) {
+		fprintf(stderr, "Error: we couldn't unlock a run loop's private mutex -- this should never have happened.\n");
+		abort();
+	}
+	
 }
 
 void ILRunLoop::signalReady() {
-	const char k = '>';
-	write(_pipe[1], &k, sizeof(char));
-}
-
-void ILRunLoop::signalByDeliveringMessage(ILMessage* m) {
-	this->signalReady();
+	pthread_cond_signal(&_signaler);
 }
 
 void ILRunLoop::spin() {
@@ -89,12 +104,15 @@ ILRunLoop::ILRunLoop() : ILTarget() {
 	_messageHub = NULL;
 	_target = NULL;
 	
-	if (pipe(_pipe) != 0) {
-		std::cerr << "Error: Cannot allocate pipes for signaling.";
+	if (pthread_cond_init(&_signaler, NULL) != 0) {
+		fprintf(stderr, "Error: Cannot allocate condition variable for signaling.");
 		abort();
 	}
-	
-	this->currentMessageHub()->addTargetForMessagesOfKind(new ILRunLoopSignalTarget(this), ILRunLoopSignalReadyMessage, NULL);
+
+	if (pthread_mutex_init(&_mutex, NULL) != 0) {
+		fprintf(stderr, "Error: Cannot allocate mutex for signaling.");
+		abort();
+	}
 }
 
 ILRunLoop::~ILRunLoop() {
@@ -102,10 +120,8 @@ ILRunLoop::~ILRunLoop() {
 	ILRelease(_messageHub);
 	ILRelease((ILObject*) _target);
 	
-	if (_pipe[0] != 0)
-		close(_pipe[0]);
-	if (_pipe[1] != 0)
-		close(_pipe[1]);
+	pthread_cond_destroy(&_signaler);
+	pthread_mutex_destroy(&_mutex);
 }
 
 ILMessageHub* ILRunLoop::currentMessageHub() {
@@ -122,7 +138,7 @@ ILTarget* ILRunLoop::currentThreadTarget() {
 	return _target;
 }
 
-// ONLY thread-safe method of this class.
+
 void ILRunLoop::deliverMessage(ILMessage* m) {
 	if (_target)
 		_target->deliverMessage(m);

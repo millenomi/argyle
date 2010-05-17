@@ -244,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				5073E0CA09E734BC00EC74B6 /* Configuration Files */,
+				15234CEF1199E44900721A5E /* Playground */,
 				08FB77ACFE841707C02AAC07 /* Source */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DDFF38A45A11DB9C8B /* Products */,
@@ -265,7 +266,6 @@
 				32BAE0B70371A74B00C91783 /* Argyle_Prefix.pch */,
 				15BB4C99119B2BB400E8E19D /* String */,
 				15234DCB119A965C00721A5E /* Set */,
-				15234CEF1199E44900721A5E /* Playground */,
 				15234BCA119995C200721A5E /* Run Loops */,
 				15EA0175119168C500C4296E /* Messages and Targets */,
 				156A8C57118E011100C4D67E /* Map */,
