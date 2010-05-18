@@ -11,7 +11,6 @@
 #include <sys/time.h>
 #include <pthread.h>
 #include <unistd.h>
-#include <sys/select.h>
 #include <math.h>
 
 static char ILRunLoopUnusedValue = 0;
