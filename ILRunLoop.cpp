@@ -37,20 +37,19 @@ void ILRunLoop::removeSource(ILSource* s) {
 }
 
 void ILRunLoop::spinForAboutUpTo(ILTimeInterval seconds) {
-	ILTimeInterval start = ILGetAbsoluteTime();
-
 	if (pthread_mutex_lock(&_mutex) != 0) {
 		fprintf(stderr, "Error: we couldn't lock a run loop's private mutex -- this should never have happened.\n");
 		abort();
 	}
 		
 	ILTimeInterval now = ILGetAbsoluteTime();
+	ILTimeInterval budget = seconds;
 	
 	do {
 		if (_sources->count() == 0)
 			return;
 		
-		ILTimeInterval sleepInterval = seconds;
+		ILTimeInterval sleepInterval = budget;
 		
 		ILSetIterator* i = _sources->iterate();
 		ILSource* s;
@@ -80,9 +79,11 @@ void ILRunLoop::spinForAboutUpTo(ILTimeInterval seconds) {
 		
 		this->spin();
 		
-		now = ILGetAbsoluteTime();
+		ILTimeInterval newNow = ILGetAbsoluteTime();
+		budget -=  (newNow - now);
+		now = newNow;
 		
-	} while (now - start < seconds);
+	} while (budget >= 0);
 	
 	if (pthread_mutex_unlock(&_mutex) != 0) {
 		fprintf(stderr, "Error: we couldn't unlock a run loop's private mutex -- this should never have happened.\n");
