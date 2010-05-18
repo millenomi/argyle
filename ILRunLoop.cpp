@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include <sys/select.h>
 #include <math.h>
-#include <iostream>
 
 static char ILRunLoopUnusedValue = 0;
 void* const ILRunLoopSignalReadyMessage = &ILRunLoopUnusedValue;
