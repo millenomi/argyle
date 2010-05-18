@@ -15,13 +15,10 @@
 #include "ILMessageHub.h"
 #include "ILThreadTarget.h"
 #include "ILSource.h"
+#include "ILTime.h"
 
 #include <pthread.h>
 
-typedef double ILTimeInterval;
-extern ILTimeInterval ILGetAbsoluteTime();
-
-extern ILTimeInterval ILAbsoluteTimeDistantFuture;
 
 class ILRunLoop : public ILTarget {
 public:
@@ -42,13 +39,6 @@ public:
 	 When this method is called, the current thread sleeps until the timeout is met or a source signals that it's ready (via the run loop's #signalReady() method). It will then spin. This may repeat for a number of times until the run loop detects that the specified timeout has been exceeded.
 	 */
 	void spinForAboutUpTo(ILTimeInterval seconds);
-	
-	/**
-	 Adds a wake-up time to this run loop. If the run loop is blocked at that time (as a result of the #spinForAboutUpTo() call), it will spin as though it were signaled. 
-	
-	 The time is absolute. To create a relative time (eg "five seconds from now"), add the desired interval to the time produced by ILGetAbsoluteTime().
-	 */
-	void addWakeUpTime(ILTimeInterval time);
 	
 	// ONLY thread-safe method of this class.
 	virtual void deliverMessage(ILMessage* m);

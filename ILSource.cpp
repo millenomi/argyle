@@ -11,3 +11,6 @@ ILRunLoop* ILSource::runLoop() {
 	return _runLoop;
 }
 
+ILTimeInterval ILSource::nextDesiredExecutionTime() {
+	return ILAbsoluteTimeDistantFuture;
+}

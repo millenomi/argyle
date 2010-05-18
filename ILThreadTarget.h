@@ -15,20 +15,24 @@
 #include "ILMessage.h"
 #include "ILSource.h"
 
-class ILThreadTarget : public ILTarget, public ILSource {
+class ILThreadTargetSource;
+
+class ILThreadTarget : public ILTarget {
 public:
 	ILThreadTarget(ILTarget* deliveryTarget);
 	~ILThreadTarget();
 	
 	virtual void deliverMessage(ILMessage* m);
-	virtual void performPeriodicWork();
 	
 	void deliverPendingMessagesOnThisThread();
+	
+	ILSource* source();
 	
 private:
 	ILTarget* _deliveryTarget;
 	ILList* _messages;
 	pthread_mutex_t _mutex;
+	ILThreadTargetSource* _source;
 };
 
 #endif // #ifndef ILThreadTarget_H

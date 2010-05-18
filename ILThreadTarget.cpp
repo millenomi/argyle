@@ -10,6 +10,14 @@
 #include "ILThreadTarget.h"
 #include "ILRunLoop.h"
 
+class ILThreadTargetSource : public ILSource {
+public:
+	ILThreadTargetSource(ILThreadTarget* t) { _threadTarget = t; }
+	
+	ILThreadTarget* _threadTarget;
+	virtual void spin();
+};
+
 ILThreadTarget::ILThreadTarget(ILTarget* t) {
 	_deliveryTarget = ILRetain(t);
 	_messages = (ILList*) ILRetain(new ILList());
@@ -22,12 +30,20 @@ ILThreadTarget::ILThreadTarget(ILTarget* t) {
 	int result = pthread_mutex_init(&_mutex, &attrs);
 	if (result != 0)
 		abort();
+	
+	_source = new ILThreadTargetSource(this);
+}
+
+ILSource* ILThreadTarget::source() {
+	return _source;
 }
 
 ILThreadTarget::~ILThreadTarget() {
 	pthread_mutex_destroy(&_mutex);
 	ILRelease((ILObject*) _deliveryTarget);
 	ILRelease(_messages);
+	_source->_threadTarget = NULL;
+	ILRelease(_source);
 }
 
 void ILThreadTarget::deliverMessage(ILMessage* m) {
@@ -35,8 +51,8 @@ void ILThreadTarget::deliverMessage(ILMessage* m) {
 	_messages->addObject(m);
 	pthread_mutex_unlock(&_mutex);
 	
-	if (this->runLoop())
-		this->runLoop()->signalReady();
+	if (_source->runLoop())
+		_source->runLoop()->signalReady();
 }
 
 void ILThreadTarget::deliverPendingMessagesOnThisThread() {
@@ -58,6 +74,7 @@ void ILThreadTarget::deliverPendingMessagesOnThisThread() {
 	pthread_mutex_unlock(&_mutex);
 }
 
-void ILThreadTarget::performPeriodicWork() {
-	this->deliverPendingMessagesOnThisThread();
+void ILThreadTargetSource::spin() {
+	if (this->_threadTarget)
+		this->_threadTarget->deliverPendingMessagesOnThisThread();
 }

@@ -15,8 +15,6 @@
 #include <math.h>
 #include <iostream>
 
-ILTimeInterval ILAbsoluteTimeDistantFuture = NAN;
-
 static char ILRunLoopUnusedValue = 0;
 void* const ILRunLoopSignalReadyMessage = &ILRunLoopUnusedValue;
 
@@ -29,13 +27,13 @@ ILTimeInterval ILGetAbsoluteTime() {
 }
 
 void ILRunLoop::addSource(ILSource* s) {
-	_sources->addObject((ILObject*) s);
+	_sources->addObject(s);
 	s->setRunLoop(this);
 }
 
 void ILRunLoop::removeSource(ILSource* s) {
 	s->setRunLoop(NULL);
-	_sources->removeObject((ILObject*) s);
+	_sources->removeObject(s);
 }
 
 void ILRunLoop::spinForAboutUpTo(ILTimeInterval seconds) {
@@ -45,26 +43,33 @@ void ILRunLoop::spinForAboutUpTo(ILTimeInterval seconds) {
 		fprintf(stderr, "Error: we couldn't lock a run loop's private mutex -- this should never have happened.\n");
 		abort();
 	}
-	
-	long secondsSecs = (long) floor(seconds);
-	long secondNsecs = (long) ((seconds - floor(seconds)) * 1000000000.0);
+		
+	ILTimeInterval now = ILGetAbsoluteTime();
 	
 	do {
 		if (_sources->count() == 0)
 			return;
-				
-		long partSecs, partNsecs;
-	
-		partSecs = secondsSecs;
-		partNsecs = secondNsecs;
 		
-		if (partSecs > 0 || (partSecs == 0 && partNsecs > 0)) {
+		ILTimeInterval sleepInterval = seconds;
+		
+		ILSetIterator* i = _sources->iterate();
+		ILSource* s;
+		while ((s = (ILSource*) i->next())) {
+			ILTimeInterval desiredInterval = s->nextDesiredExecutionTime() - now;
+			if (desiredInterval < sleepInterval)
+				sleepInterval = desiredInterval;
+		}
+		
+		long sleepSecs = (long) floor(sleepInterval);
+		long sleepNsecs = (long) ((sleepInterval - floor(sleepInterval)) * 1000000000.0);
+		
+		if (sleepSecs > 0 || (sleepSecs == 0 && sleepNsecs > 0)) {
 			struct timeval td;
 			gettimeofday(&td, NULL);
 			
 			struct timespec ts;
-			ts.tv_sec = td.tv_sec + partSecs;
-			ts.tv_nsec = partNsecs + td.tv_usec * 1000.0;
+			ts.tv_sec = td.tv_sec + sleepSecs;
+			ts.tv_nsec = sleepNsecs + td.tv_usec * 1000.0;
 			
 			pthread_cond_timedwait(&_signaler, &_mutex, &ts);
 			// we don't check for errors --
@@ -75,7 +80,9 @@ void ILRunLoop::spinForAboutUpTo(ILTimeInterval seconds) {
 		
 		this->spin();
 		
-	} while (ILGetAbsoluteTime() - start < seconds);
+		now = ILGetAbsoluteTime();
+		
+	} while (now - start < seconds);
 	
 	if (pthread_mutex_unlock(&_mutex) != 0) {
 		fprintf(stderr, "Error: we couldn't unlock a run loop's private mutex -- this should never have happened.\n");
@@ -95,7 +102,7 @@ void ILRunLoop::spin() {
 	while ((s = (ILSource*) eachSource->next())) {
 		ILReleasePool pool;
 		if (_sources->containsObject((ILObject*) s))
-			s->performPeriodicWork();
+			s->spin();
 	}
 }
 
@@ -132,8 +139,11 @@ ILMessageHub* ILRunLoop::currentMessageHub() {
 }
 
 ILTarget* ILRunLoop::currentThreadTarget() {
-	if (!_target)
-		_target = ILRetain(new ILThreadTarget(this->currentMessageHub()));
+	if (!_target) {
+		ILThreadTarget* tt = new ILThreadTarget(this->currentMessageHub());
+		this->addSource(tt->source());
+		_target = ILRetain(tt);
+	}
 	
 	return _target;
 }

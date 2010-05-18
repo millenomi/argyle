@@ -15,6 +15,18 @@
 		15015E3F118B3ECD00972828 /* ILList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15015E3C118B3ECD00972828 /* ILList.cpp */; };
 		15015E53118B41E200972828 /* ILListTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15015E52118B41E200972828 /* ILListTest.mm */; };
 		15015E54118B41E200972828 /* ILListTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 15015E51118B41E200972828 /* ILListTest.h */; };
+		151B06B411A2975700A3ED55 /* ILTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 151B06B311A2975700A3ED55 /* ILTime.cpp */; };
+		151B06B511A2975700A3ED55 /* ILTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 151B06B211A2975700A3ED55 /* ILTime.h */; };
+		151B06B611A2975700A3ED55 /* ILTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 151B06B311A2975700A3ED55 /* ILTime.cpp */; };
+		151B06B711A2975700A3ED55 /* ILTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 151B06B311A2975700A3ED55 /* ILTime.cpp */; };
+		151B06B811A2975700A3ED55 /* ILTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 151B06B211A2975700A3ED55 /* ILTime.h */; };
+		151B06B911A2975700A3ED55 /* ILTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 151B06B311A2975700A3ED55 /* ILTime.cpp */; };
+		151B06CB11A299DD00A3ED55 /* ILTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 151B06CA11A299DD00A3ED55 /* ILTimer.cpp */; };
+		151B06CC11A299DD00A3ED55 /* ILTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 151B06C911A299DD00A3ED55 /* ILTimer.h */; };
+		151B06CD11A299DD00A3ED55 /* ILTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 151B06CA11A299DD00A3ED55 /* ILTimer.cpp */; };
+		151B06CE11A299DD00A3ED55 /* ILTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 151B06CA11A299DD00A3ED55 /* ILTimer.cpp */; };
+		151B06CF11A299DD00A3ED55 /* ILTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 151B06C911A299DD00A3ED55 /* ILTimer.h */; };
+		151B06D011A299DD00A3ED55 /* ILTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 151B06CA11A299DD00A3ED55 /* ILTimer.cpp */; };
 		15234ABF11998A1300721A5E /* ILMessageHubTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15234ABE11998A1300721A5E /* ILMessageHubTest.mm */; };
 		15234BC2119993E300721A5E /* ILThreadTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15234BC1119993E300721A5E /* ILThreadTarget.cpp */; };
 		15234BC3119993E300721A5E /* ILThreadTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 15234BC0119993E300721A5E /* ILThreadTarget.h */; };
@@ -143,6 +155,10 @@
 		15015E3C118B3ECD00972828 /* ILList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILList.cpp; sourceTree = "<group>"; };
 		15015E51118B41E200972828 /* ILListTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILListTest.h; sourceTree = "<group>"; };
 		15015E52118B41E200972828 /* ILListTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILListTest.mm; sourceTree = "<group>"; };
+		151B06B211A2975700A3ED55 /* ILTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILTime.h; sourceTree = "<group>"; };
+		151B06B311A2975700A3ED55 /* ILTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILTime.cpp; sourceTree = "<group>"; };
+		151B06C911A299DD00A3ED55 /* ILTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILTimer.h; sourceTree = "<group>"; };
+		151B06CA11A299DD00A3ED55 /* ILTimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILTimer.cpp; sourceTree = "<group>"; };
 		15234ABD11998A1300721A5E /* ILMessageHubTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILMessageHubTest.h; sourceTree = "<group>"; };
 		15234ABE11998A1300721A5E /* ILMessageHubTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ILMessageHubTest.mm; sourceTree = "<group>"; };
 		15234BC0119993E300721A5E /* ILThreadTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILThreadTarget.h; sourceTree = "<group>"; };
@@ -284,6 +300,8 @@
 			children = (
 				155E5053118B8B860036F741 /* Hash */,
 				15234DCA119A964A00721A5E /* Linked List */,
+				151B06B211A2975700A3ED55 /* ILTime.h */,
+				151B06B311A2975700A3ED55 /* ILTime.cpp */,
 			);
 			name = Basics;
 			sourceTree = "<group>";
@@ -306,6 +324,8 @@
 				15234BCC119995CC00721A5E /* ILRunLoop.cpp */,
 				15234BD1119996D100721A5E /* ILSource.h */,
 				1594473811A0A89B00550EDA /* ILSource.cpp */,
+				151B06C911A299DD00A3ED55 /* ILTimer.h */,
+				151B06CA11A299DD00A3ED55 /* ILTimer.cpp */,
 			);
 			name = "Run Loops";
 			sourceTree = "<group>";
@@ -456,6 +476,8 @@
 				15DCD88F119F4491002746F0 /* ILSource.h in Headers */,
 				15DCD890119F4491002746F0 /* ILSet.h in Headers */,
 				15DCD891119F4491002746F0 /* ILString.h in Headers */,
+				151B06B511A2975700A3ED55 /* ILTime.h in Headers */,
+				151B06CC11A299DD00A3ED55 /* ILTimer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +502,8 @@
 				15234BD2119996D100721A5E /* ILSource.h in Headers */,
 				15234DD0119A966E00721A5E /* ILSet.h in Headers */,
 				15BB4CA4119B2BCB00E8E19D /* ILString.h in Headers */,
+				151B06B811A2975700A3ED55 /* ILTime.h in Headers */,
+				151B06CF11A299DD00A3ED55 /* ILTimer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +649,8 @@
 				15234DCE119A966E00721A5E /* ILSet.cpp in Sources */,
 				15BB4CA2119B2BCB00E8E19D /* ILString.cpp in Sources */,
 				1594473911A0A89B00550EDA /* ILSource.cpp in Sources */,
+				151B06B411A2975700A3ED55 /* ILTime.cpp in Sources */,
+				151B06CB11A299DD00A3ED55 /* ILTimer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +683,8 @@
 				15234DF3119A9B5D00721A5E /* ILSetTest.mm in Sources */,
 				15BB4CA3119B2BCB00E8E19D /* ILString.cpp in Sources */,
 				1594473A11A0A89B00550EDA /* ILSource.cpp in Sources */,
+				151B06B711A2975700A3ED55 /* ILTime.cpp in Sources */,
+				151B06CE11A299DD00A3ED55 /* ILTimer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,6 +708,8 @@
 				15DCD89F119F4498002746F0 /* ILSet.cpp in Sources */,
 				15DCD8A0119F4498002746F0 /* ILString.cpp in Sources */,
 				1594473C11A0A89B00550EDA /* ILSource.cpp in Sources */,
+				151B06B611A2975700A3ED55 /* ILTime.cpp in Sources */,
+				151B06CD11A299DD00A3ED55 /* ILTimer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +733,8 @@
 				15234DD1119A966E00721A5E /* ILSet.cpp in Sources */,
 				15BB4CA5119B2BCB00E8E19D /* ILString.cpp in Sources */,
 				1594473B11A0A89B00550EDA /* ILSource.cpp in Sources */,
+				151B06B911A2975700A3ED55 /* ILTime.cpp in Sources */,
+				151B06D011A299DD00A3ED55 /* ILTimer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
