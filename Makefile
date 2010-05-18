@@ -1,5 +1,4 @@
 BUILD_DIRECTORY = build-Makefile
-LIBTOOL = glibtool
 
 # for now, GCC is required to build Platform Core.
 
