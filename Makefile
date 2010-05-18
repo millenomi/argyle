@@ -36,8 +36,10 @@ STATIC_LIBRARY = $(BUILT_PRODUCTS_DIR)/$(PLATFORM_LIB_PREFIX)$(PRODUCT_NAME)$(PL
 DYNAMIC_LIBRARY = $(BUILT_PRODUCTS_DIR)/$(PLATFORM_LIB_PREFIX)$(PRODUCT_NAME)$(PLATFORM_DYLIB_SUFFIX)
 
 ifeq ($(PLATFORM_DYLIB_SUFFIX),)
-$(warning No dylib suffix specified for this platform; dylibs disabled.)
+ifneq ($(PLATFORM_SUPPORTS_DYLIBS),NO)
+$(warning warning: No dylib suffix specified for this platform; dylibs disabled.)
 PLATFORM_SUPPORTS_DYLIBS := NO
+endif
 endif
 
 ifeq ($(PLATFORM_SUPPORTS_DYLIBS),NO)
