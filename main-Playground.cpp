@@ -13,6 +13,7 @@
 #include "ILMessage.h"
 #include "ILRunLoop.h"
 #include "ILTimer.h"
+#include "ILApp.h"
 
 static bool run = true;
 
@@ -26,6 +27,8 @@ static void PrintSomeNumbers(ILMessage* m, void* context) {
 }
 
 int main(int argc, const char* argv[]) {
+	ILApp app(argc, argv);
+	
 	ILReleasePool pool;
 	
 	ILRunLoop* r = ILRunLoop::current();
@@ -38,7 +41,6 @@ int main(int argc, const char* argv[]) {
 	
 	while (run)
 		r->spinForAboutUpTo(5.0);
-	_exit(0);
 	
-	return 0;
+	return app.end();
 }
