@@ -29,6 +29,38 @@
 		15127EF111A3D5420064280B /* libpthread.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15127EF011A3D5420064280B /* libpthread.dylib */; };
 		15127EFB11A3D5760064280B /* ILTesting.h in Headers */ = {isa = PBXBuildFile; fileRef = 15127EF911A3D5760064280B /* ILTesting.h */; };
 		15127EFC11A3D5760064280B /* ILTesting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EFA11A3D5760064280B /* ILTesting.cpp */; };
+		155F24E411A40EF1005AB685 /* ILTesting.h in Headers */ = {isa = PBXBuildFile; fileRef = 15127EF911A3D5760064280B /* ILTesting.h */; };
+		155F24E611A40EF1005AB685 /* ILApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EB911A3D4D60064280B /* ILApp.cpp */; };
+		155F24E711A40EF1005AB685 /* ILData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EBA11A3D4D60064280B /* ILData.cpp */; };
+		155F24E811A40EF1005AB685 /* ILHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EBB11A3D4D60064280B /* ILHash.cpp */; };
+		155F24E911A40EF1005AB685 /* ILLinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EBC11A3D4D60064280B /* ILLinkedList.cpp */; };
+		155F24EA11A40EF1005AB685 /* ILList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EBD11A3D4D60064280B /* ILList.cpp */; };
+		155F24EB11A40EF1005AB685 /* ILMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EBE11A3D4D60064280B /* ILMap.cpp */; };
+		155F24EC11A40EF1005AB685 /* ILMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EBF11A3D4D60064280B /* ILMessage.cpp */; };
+		155F24ED11A40EF1005AB685 /* ILMessageHub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC011A3D4D60064280B /* ILMessageHub.cpp */; };
+		155F24EE11A40EF1005AB685 /* ILNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC111A3D4D60064280B /* ILNumber.cpp */; };
+		155F24EF11A40EF1005AB685 /* ILObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC211A3D4D60064280B /* ILObject.cpp */; };
+		155F24F011A40EF1005AB685 /* ILReleasePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC311A3D4D60064280B /* ILReleasePool.cpp */; };
+		155F24F111A40EF1005AB685 /* ILReleasePoolDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC411A3D4D60064280B /* ILReleasePoolDelegate.cpp */; };
+		155F24F211A40EF1005AB685 /* ILRunLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC511A3D4D60064280B /* ILRunLoop.cpp */; };
+		155F24F311A40EF1005AB685 /* ILSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC611A3D4D60064280B /* ILSet.cpp */; };
+		155F24F411A40EF1005AB685 /* ILSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC711A3D4D60064280B /* ILSource.cpp */; };
+		155F24F511A40EF1005AB685 /* ILString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC811A3D4D60064280B /* ILString.cpp */; };
+		155F24F611A40EF1005AB685 /* ILThreadTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC911A3D4D60064280B /* ILThreadTarget.cpp */; };
+		155F24F711A40EF1005AB685 /* ILTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127ECA11A3D4D60064280B /* ILTime.cpp */; };
+		155F24F811A40EF1005AB685 /* ILTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127ECB11A3D4D60064280B /* ILTimer.cpp */; };
+		155F24F911A40EF1005AB685 /* ILTesting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EFA11A3D5760064280B /* ILTesting.cpp */; };
+		155F24FB11A40EF1005AB685 /* libpthread.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15127EF011A3D5420064280B /* libpthread.dylib */; };
+		155F25A511A41856005AB685 /* ILDataTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 155F25A411A41856005AB685 /* ILDataTest.cpp */; };
+		155F25A611A41856005AB685 /* ILDataTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 155F25A311A41856005AB685 /* ILDataTest.h */; };
+		155F25A711A41856005AB685 /* ILDataTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 155F25A411A41856005AB685 /* ILDataTest.cpp */; };
+		155F25A811A41856005AB685 /* ILDataTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 155F25A311A41856005AB685 /* ILDataTest.h */; };
+		155F25A911A41856005AB685 /* ILDataTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 155F25A411A41856005AB685 /* ILDataTest.cpp */; };
+		155F25BF11A41A00005AB685 /* ILPlatformCoreTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 155F25BE11A41A00005AB685 /* ILPlatformCoreTests.cpp */; };
+		155F25C011A41A00005AB685 /* ILPlatformCoreTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 155F25BD11A41A00005AB685 /* ILPlatformCoreTests.h */; };
+		155F25C111A41A00005AB685 /* ILPlatformCoreTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 155F25BE11A41A00005AB685 /* ILPlatformCoreTests.cpp */; };
+		155F25C211A41A00005AB685 /* ILPlatformCoreTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 155F25BD11A41A00005AB685 /* ILPlatformCoreTests.h */; };
+		155F25C311A41A00005AB685 /* ILPlatformCoreTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 155F25BE11A41A00005AB685 /* ILPlatformCoreTests.cpp */; };
 		15B7331111A3DEB900C166E2 /* libTests_PlatformCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15127ED611A3D5190064280B /* libTests_PlatformCore.a */; };
 		15B7331211A3DEBF00C166E2 /* main-TestTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15B7330611A3DE9700C166E2 /* main-TestTest.cpp */; };
 /* End PBXBuildFile section */
@@ -67,6 +99,11 @@
 		15127EF011A3D5420064280B /* libpthread.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpthread.dylib; path = /usr/lib/libpthread.dylib; sourceTree = "<absolute>"; };
 		15127EF911A3D5760064280B /* ILTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILTesting.h; sourceTree = "<group>"; };
 		15127EFA11A3D5760064280B /* ILTesting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILTesting.cpp; sourceTree = "<group>"; };
+		155F24FF11A40EF1005AB685 /* libTests_PlatformCore-iPhone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libTests_PlatformCore-iPhone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		155F25A311A41856005AB685 /* ILDataTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILDataTest.h; sourceTree = "<group>"; };
+		155F25A411A41856005AB685 /* ILDataTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILDataTest.cpp; sourceTree = "<group>"; };
+		155F25BD11A41A00005AB685 /* ILPlatformCoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILPlatformCoreTests.h; sourceTree = "<group>"; };
+		155F25BE11A41A00005AB685 /* ILPlatformCoreTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILPlatformCoreTests.cpp; sourceTree = "<group>"; };
 		15B7330611A3DE9700C166E2 /* main-TestTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "main-TestTest.cpp"; path = "Executable/main-TestTest.cpp"; sourceTree = "<group>"; };
 		15B7330B11A3DEAA00C166E2 /* TestTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestTest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,6 +114,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				15127EF111A3D5420064280B /* libpthread.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		155F24FA11A40EF1005AB685 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				155F24FB11A40EF1005AB685 /* libpthread.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +139,7 @@
 		15127EA611A3D4A20064280B = {
 			isa = PBXGroup;
 			children = (
+				155F25A211A41842005AB685 /* Platform Core Tests */,
 				15127EF811A3D5600064280B /* Testing */,
 				15127EB811A3D4C90064280B /* Platform Core */,
 				15127ED711A3D5190064280B /* Products */,
@@ -132,6 +178,7 @@
 			children = (
 				15127ED611A3D5190064280B /* libTests_PlatformCore.a */,
 				15B7330B11A3DEAA00C166E2 /* TestTest */,
+				155F24FF11A40EF1005AB685 /* libTests_PlatformCore-iPhone.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,9 +196,28 @@
 			children = (
 				15127EF911A3D5760064280B /* ILTesting.h */,
 				15127EFA11A3D5760064280B /* ILTesting.cpp */,
-				15B7330611A3DE9700C166E2 /* main-TestTest.cpp */,
+				155F247F11A40BF5005AB685 /* Meta-Testing */,
 			);
 			name = Testing;
+			sourceTree = "<group>";
+		};
+		155F247F11A40BF5005AB685 /* Meta-Testing */ = {
+			isa = PBXGroup;
+			children = (
+				15B7330611A3DE9700C166E2 /* main-TestTest.cpp */,
+			);
+			name = "Meta-Testing";
+			sourceTree = "<group>";
+		};
+		155F25A211A41842005AB685 /* Platform Core Tests */ = {
+			isa = PBXGroup;
+			children = (
+				155F25A311A41856005AB685 /* ILDataTest.h */,
+				155F25A411A41856005AB685 /* ILDataTest.cpp */,
+				155F25BD11A41A00005AB685 /* ILPlatformCoreTests.h */,
+				155F25BE11A41A00005AB685 /* ILPlatformCoreTests.cpp */,
+			);
+			name = "Platform Core Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +228,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				15127EFB11A3D5760064280B /* ILTesting.h in Headers */,
+				155F25A611A41856005AB685 /* ILDataTest.h in Headers */,
+				155F25C011A41A00005AB685 /* ILPlatformCoreTests.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		155F24E311A40EF1005AB685 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				155F24E411A40EF1005AB685 /* ILTesting.h in Headers */,
+				155F25A811A41856005AB685 /* ILDataTest.h in Headers */,
+				155F25C211A41A00005AB685 /* ILPlatformCoreTests.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +261,23 @@
 			name = Tests_PlatformCore;
 			productName = Tests_PlatformCore;
 			productReference = 15127ED611A3D5190064280B /* libTests_PlatformCore.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		155F24E211A40EF1005AB685 /* Tests_PlatformCore-iPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 155F24FC11A40EF1005AB685 /* Build configuration list for PBXNativeTarget "Tests_PlatformCore-iPhone" */;
+			buildPhases = (
+				155F24E311A40EF1005AB685 /* Headers */,
+				155F24E511A40EF1005AB685 /* Sources */,
+				155F24FA11A40EF1005AB685 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tests_PlatformCore-iPhone";
+			productName = Tests_PlatformCore;
+			productReference = 155F24FF11A40EF1005AB685 /* libTests_PlatformCore-iPhone.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		15B7330A11A3DEAA00C166E2 /* TestTest */ = {
@@ -217,6 +312,7 @@
 			targets = (
 				15127ED511A3D5190064280B /* Tests_PlatformCore */,
 				15B7330A11A3DEAA00C166E2 /* TestTest */,
+				155F24E211A40EF1005AB685 /* Tests_PlatformCore-iPhone */,
 			);
 		};
 /* End PBXProject section */
@@ -246,6 +342,37 @@
 				15127EEC11A3D5230064280B /* ILTime.cpp in Sources */,
 				15127EED11A3D5230064280B /* ILTimer.cpp in Sources */,
 				15127EFC11A3D5760064280B /* ILTesting.cpp in Sources */,
+				155F25A711A41856005AB685 /* ILDataTest.cpp in Sources */,
+				155F25C111A41A00005AB685 /* ILPlatformCoreTests.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		155F24E511A40EF1005AB685 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				155F24E611A40EF1005AB685 /* ILApp.cpp in Sources */,
+				155F24E711A40EF1005AB685 /* ILData.cpp in Sources */,
+				155F24E811A40EF1005AB685 /* ILHash.cpp in Sources */,
+				155F24E911A40EF1005AB685 /* ILLinkedList.cpp in Sources */,
+				155F24EA11A40EF1005AB685 /* ILList.cpp in Sources */,
+				155F24EB11A40EF1005AB685 /* ILMap.cpp in Sources */,
+				155F24EC11A40EF1005AB685 /* ILMessage.cpp in Sources */,
+				155F24ED11A40EF1005AB685 /* ILMessageHub.cpp in Sources */,
+				155F24EE11A40EF1005AB685 /* ILNumber.cpp in Sources */,
+				155F24EF11A40EF1005AB685 /* ILObject.cpp in Sources */,
+				155F24F011A40EF1005AB685 /* ILReleasePool.cpp in Sources */,
+				155F24F111A40EF1005AB685 /* ILReleasePoolDelegate.cpp in Sources */,
+				155F24F211A40EF1005AB685 /* ILRunLoop.cpp in Sources */,
+				155F24F311A40EF1005AB685 /* ILSet.cpp in Sources */,
+				155F24F411A40EF1005AB685 /* ILSource.cpp in Sources */,
+				155F24F511A40EF1005AB685 /* ILString.cpp in Sources */,
+				155F24F611A40EF1005AB685 /* ILThreadTarget.cpp in Sources */,
+				155F24F711A40EF1005AB685 /* ILTime.cpp in Sources */,
+				155F24F811A40EF1005AB685 /* ILTimer.cpp in Sources */,
+				155F24F911A40EF1005AB685 /* ILTesting.cpp in Sources */,
+				155F25A911A41856005AB685 /* ILDataTest.cpp in Sources */,
+				155F25C311A41A00005AB685 /* ILPlatformCoreTests.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +381,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				15B7331211A3DEBF00C166E2 /* main-TestTest.cpp in Sources */,
+				155F25A511A41856005AB685 /* ILDataTest.cpp in Sources */,
+				155F25BF11A41A00005AB685 /* ILPlatformCoreTests.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +443,42 @@
 			};
 			name = Release;
 		};
+		155F24FD11A40EF1005AB685 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = "Tests_PlatformCore-iPhone";
+				SDKROOT = iphoneos3.2;
+			};
+			name = Debug;
+		};
+		155F24FE11A40EF1005AB685 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = "Tests_PlatformCore-iPhone";
+				SDKROOT = iphoneos3.2;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		15B7330D11A3DEAB00C166E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -361,6 +526,15 @@
 			buildConfigurations = (
 				15127ED811A3D51A0064280B /* Debug */,
 				15127ED911A3D51A0064280B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		155F24FC11A40EF1005AB685 /* Build configuration list for PBXNativeTarget "Tests_PlatformCore-iPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				155F24FD11A40EF1005AB685 /* Debug */,
+				155F24FE11A40EF1005AB685 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
