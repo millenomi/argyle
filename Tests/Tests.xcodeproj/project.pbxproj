@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15127EDB11A3D5230064280B /* ILApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EB911A3D4D60064280B /* ILApp.cpp */; };
+		15127EDC11A3D5230064280B /* ILData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EBA11A3D4D60064280B /* ILData.cpp */; };
+		15127EDD11A3D5230064280B /* ILHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EBB11A3D4D60064280B /* ILHash.cpp */; };
+		15127EDE11A3D5230064280B /* ILLinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EBC11A3D4D60064280B /* ILLinkedList.cpp */; };
+		15127EDF11A3D5230064280B /* ILList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EBD11A3D4D60064280B /* ILList.cpp */; };
+		15127EE011A3D5230064280B /* ILMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EBE11A3D4D60064280B /* ILMap.cpp */; };
+		15127EE111A3D5230064280B /* ILMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EBF11A3D4D60064280B /* ILMessage.cpp */; };
+		15127EE211A3D5230064280B /* ILMessageHub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC011A3D4D60064280B /* ILMessageHub.cpp */; };
+		15127EE311A3D5230064280B /* ILNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC111A3D4D60064280B /* ILNumber.cpp */; };
+		15127EE411A3D5230064280B /* ILObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC211A3D4D60064280B /* ILObject.cpp */; };
+		15127EE511A3D5230064280B /* ILReleasePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC311A3D4D60064280B /* ILReleasePool.cpp */; };
+		15127EE611A3D5230064280B /* ILReleasePoolDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC411A3D4D60064280B /* ILReleasePoolDelegate.cpp */; };
+		15127EE711A3D5230064280B /* ILRunLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC511A3D4D60064280B /* ILRunLoop.cpp */; };
+		15127EE811A3D5230064280B /* ILSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC611A3D4D60064280B /* ILSet.cpp */; };
+		15127EE911A3D5230064280B /* ILSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC711A3D4D60064280B /* ILSource.cpp */; };
+		15127EEA11A3D5230064280B /* ILString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC811A3D4D60064280B /* ILString.cpp */; };
+		15127EEB11A3D5230064280B /* ILThreadTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EC911A3D4D60064280B /* ILThreadTarget.cpp */; };
+		15127EEC11A3D5230064280B /* ILTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127ECA11A3D4D60064280B /* ILTime.cpp */; };
+		15127EED11A3D5230064280B /* ILTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127ECB11A3D4D60064280B /* ILTimer.cpp */; };
+		15127EF111A3D5420064280B /* libpthread.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15127EF011A3D5420064280B /* libpthread.dylib */; };
+		15127EFB11A3D5760064280B /* ILTesting.h in Headers */ = {isa = PBXBuildFile; fileRef = 15127EF911A3D5760064280B /* ILTesting.h */; };
+		15127EFC11A3D5760064280B /* ILTesting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15127EFA11A3D5760064280B /* ILTesting.cpp */; };
+		15B7331111A3DEB900C166E2 /* libTests_PlatformCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15127ED611A3D5190064280B /* libTests_PlatformCore.a */; };
+		15B7331211A3DEBF00C166E2 /* main-TestTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15B7330611A3DE9700C166E2 /* main-TestTest.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		15B7330F11A3DEB200C166E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15127EA811A3D4A20064280B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15127ED511A3D5190064280B;
+			remoteInfo = Tests_PlatformCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15127EB911A3D4D60064280B /* ILApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILApp.cpp; path = ../ILApp.cpp; sourceTree = SOURCE_ROOT; };
+		15127EBA11A3D4D60064280B /* ILData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILData.cpp; path = ../ILData.cpp; sourceTree = SOURCE_ROOT; };
+		15127EBB11A3D4D60064280B /* ILHash.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILHash.cpp; path = ../ILHash.cpp; sourceTree = SOURCE_ROOT; };
+		15127EBC11A3D4D60064280B /* ILLinkedList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILLinkedList.cpp; path = ../ILLinkedList.cpp; sourceTree = SOURCE_ROOT; };
+		15127EBD11A3D4D60064280B /* ILList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILList.cpp; path = ../ILList.cpp; sourceTree = SOURCE_ROOT; };
+		15127EBE11A3D4D60064280B /* ILMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILMap.cpp; path = ../ILMap.cpp; sourceTree = SOURCE_ROOT; };
+		15127EBF11A3D4D60064280B /* ILMessage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILMessage.cpp; path = ../ILMessage.cpp; sourceTree = SOURCE_ROOT; };
+		15127EC011A3D4D60064280B /* ILMessageHub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILMessageHub.cpp; path = ../ILMessageHub.cpp; sourceTree = SOURCE_ROOT; };
+		15127EC111A3D4D60064280B /* ILNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILNumber.cpp; path = ../ILNumber.cpp; sourceTree = SOURCE_ROOT; };
+		15127EC211A3D4D60064280B /* ILObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILObject.cpp; path = ../ILObject.cpp; sourceTree = SOURCE_ROOT; };
+		15127EC311A3D4D60064280B /* ILReleasePool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILReleasePool.cpp; path = ../ILReleasePool.cpp; sourceTree = SOURCE_ROOT; };
+		15127EC411A3D4D60064280B /* ILReleasePoolDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILReleasePoolDelegate.cpp; path = ../ILReleasePoolDelegate.cpp; sourceTree = SOURCE_ROOT; };
+		15127EC511A3D4D60064280B /* ILRunLoop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILRunLoop.cpp; path = ../ILRunLoop.cpp; sourceTree = SOURCE_ROOT; };
+		15127EC611A3D4D60064280B /* ILSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILSet.cpp; path = ../ILSet.cpp; sourceTree = SOURCE_ROOT; };
+		15127EC711A3D4D60064280B /* ILSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILSource.cpp; path = ../ILSource.cpp; sourceTree = SOURCE_ROOT; };
+		15127EC811A3D4D60064280B /* ILString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILString.cpp; path = ../ILString.cpp; sourceTree = SOURCE_ROOT; };
+		15127EC911A3D4D60064280B /* ILThreadTarget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILThreadTarget.cpp; path = ../ILThreadTarget.cpp; sourceTree = SOURCE_ROOT; };
+		15127ECA11A3D4D60064280B /* ILTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILTime.cpp; path = ../ILTime.cpp; sourceTree = SOURCE_ROOT; };
+		15127ECB11A3D4D60064280B /* ILTimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILTimer.cpp; path = ../ILTimer.cpp; sourceTree = SOURCE_ROOT; };
+		15127ED611A3D5190064280B /* libTests_PlatformCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTests_PlatformCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		15127EF011A3D5420064280B /* libpthread.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpthread.dylib; path = /usr/lib/libpthread.dylib; sourceTree = "<absolute>"; };
+		15127EF911A3D5760064280B /* ILTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILTesting.h; sourceTree = "<group>"; };
+		15127EFA11A3D5760064280B /* ILTesting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ILTesting.cpp; sourceTree = "<group>"; };
+		15B7330611A3DE9700C166E2 /* main-TestTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "main-TestTest.cpp"; path = "Executable/main-TestTest.cpp"; sourceTree = "<group>"; };
+		15B7330B11A3DEAA00C166E2 /* TestTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestTest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15127ED411A3D5190064280B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15127EF111A3D5420064280B /* libpthread.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15B7330911A3DEAA00C166E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15B7331111A3DEB900C166E2 /* libTests_PlatformCore.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15127EA611A3D4A20064280B = {
+			isa = PBXGroup;
+			children = (
+				15127EF811A3D5600064280B /* Testing */,
+				15127EB811A3D4C90064280B /* Platform Core */,
+				15127ED711A3D5190064280B /* Products */,
+				15127EF511A3D54C0064280B /* Linked Libraries */,
+			);
+			sourceTree = "<group>";
+		};
+		15127EB811A3D4C90064280B /* Platform Core */ = {
+			isa = PBXGroup;
+			children = (
+				15127EB911A3D4D60064280B /* ILApp.cpp */,
+				15127EBA11A3D4D60064280B /* ILData.cpp */,
+				15127EBB11A3D4D60064280B /* ILHash.cpp */,
+				15127EBC11A3D4D60064280B /* ILLinkedList.cpp */,
+				15127EBD11A3D4D60064280B /* ILList.cpp */,
+				15127EBE11A3D4D60064280B /* ILMap.cpp */,
+				15127EBF11A3D4D60064280B /* ILMessage.cpp */,
+				15127EC011A3D4D60064280B /* ILMessageHub.cpp */,
+				15127EC111A3D4D60064280B /* ILNumber.cpp */,
+				15127EC211A3D4D60064280B /* ILObject.cpp */,
+				15127EC311A3D4D60064280B /* ILReleasePool.cpp */,
+				15127EC411A3D4D60064280B /* ILReleasePoolDelegate.cpp */,
+				15127EC511A3D4D60064280B /* ILRunLoop.cpp */,
+				15127EC611A3D4D60064280B /* ILSet.cpp */,
+				15127EC711A3D4D60064280B /* ILSource.cpp */,
+				15127EC811A3D4D60064280B /* ILString.cpp */,
+				15127EC911A3D4D60064280B /* ILThreadTarget.cpp */,
+				15127ECA11A3D4D60064280B /* ILTime.cpp */,
+				15127ECB11A3D4D60064280B /* ILTimer.cpp */,
+			);
+			name = "Platform Core";
+			sourceTree = "<group>";
+		};
+		15127ED711A3D5190064280B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				15127ED611A3D5190064280B /* libTests_PlatformCore.a */,
+				15B7330B11A3DEAA00C166E2 /* TestTest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		15127EF511A3D54C0064280B /* Linked Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				15127EF011A3D5420064280B /* libpthread.dylib */,
+			);
+			name = "Linked Libraries";
+			sourceTree = "<group>";
+		};
+		15127EF811A3D5600064280B /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				15127EF911A3D5760064280B /* ILTesting.h */,
+				15127EFA11A3D5760064280B /* ILTesting.cpp */,
+				15B7330611A3DE9700C166E2 /* main-TestTest.cpp */,
+			);
+			name = Testing;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		15127ED211A3D5190064280B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15127EFB11A3D5760064280B /* ILTesting.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		15127ED511A3D5190064280B /* Tests_PlatformCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15127EDA11A3D51A0064280B /* Build configuration list for PBXNativeTarget "Tests_PlatformCore" */;
+			buildPhases = (
+				15127ED211A3D5190064280B /* Headers */,
+				15127ED311A3D5190064280B /* Sources */,
+				15127ED411A3D5190064280B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests_PlatformCore;
+			productName = Tests_PlatformCore;
+			productReference = 15127ED611A3D5190064280B /* libTests_PlatformCore.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		15B7330A11A3DEAA00C166E2 /* TestTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15B7331E11A3DED000C166E2 /* Build configuration list for PBXNativeTarget "TestTest" */;
+			buildPhases = (
+				15B7330811A3DEAA00C166E2 /* Sources */,
+				15B7330911A3DEAA00C166E2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15B7331011A3DEB200C166E2 /* PBXTargetDependency */,
+			);
+			name = TestTest;
+			productName = TestTest;
+			productReference = 15B7330B11A3DEAA00C166E2 /* TestTest */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		15127EA811A3D4A20064280B /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 15127EAB11A3D4A20064280B /* Build configuration list for PBXProject "Tests" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 0;
+			mainGroup = 15127EA611A3D4A20064280B;
+			productRefGroup = 15127ED711A3D5190064280B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				15127ED511A3D5190064280B /* Tests_PlatformCore */,
+				15B7330A11A3DEAA00C166E2 /* TestTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15127ED311A3D5190064280B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15127EDB11A3D5230064280B /* ILApp.cpp in Sources */,
+				15127EDC11A3D5230064280B /* ILData.cpp in Sources */,
+				15127EDD11A3D5230064280B /* ILHash.cpp in Sources */,
+				15127EDE11A3D5230064280B /* ILLinkedList.cpp in Sources */,
+				15127EDF11A3D5230064280B /* ILList.cpp in Sources */,
+				15127EE011A3D5230064280B /* ILMap.cpp in Sources */,
+				15127EE111A3D5230064280B /* ILMessage.cpp in Sources */,
+				15127EE211A3D5230064280B /* ILMessageHub.cpp in Sources */,
+				15127EE311A3D5230064280B /* ILNumber.cpp in Sources */,
+				15127EE411A3D5230064280B /* ILObject.cpp in Sources */,
+				15127EE511A3D5230064280B /* ILReleasePool.cpp in Sources */,
+				15127EE611A3D5230064280B /* ILReleasePoolDelegate.cpp in Sources */,
+				15127EE711A3D5230064280B /* ILRunLoop.cpp in Sources */,
+				15127EE811A3D5230064280B /* ILSet.cpp in Sources */,
+				15127EE911A3D5230064280B /* ILSource.cpp in Sources */,
+				15127EEA11A3D5230064280B /* ILString.cpp in Sources */,
+				15127EEB11A3D5230064280B /* ILThreadTarget.cpp in Sources */,
+				15127EEC11A3D5230064280B /* ILTime.cpp in Sources */,
+				15127EED11A3D5230064280B /* ILTimer.cpp in Sources */,
+				15127EFC11A3D5760064280B /* ILTesting.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15B7330811A3DEAA00C166E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15B7331211A3DEBF00C166E2 /* main-TestTest.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		15B7331011A3DEB200C166E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15127ED511A3D5190064280B /* Tests_PlatformCore */;
+			targetProxy = 15B7330F11A3DEB200C166E2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		15127EA911A3D4A20064280B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/..";
+			};
+			name = Debug;
+		};
+		15127EAA11A3D4A20064280B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/..";
+			};
+			name = Release;
+		};
+		15127ED811A3D51A0064280B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = Tests_PlatformCore;
+			};
+			name = Debug;
+		};
+		15127ED911A3D51A0064280B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = Tests_PlatformCore;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		15B7330D11A3DEAB00C166E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = TestTest;
+			};
+			name = Debug;
+		};
+		15B7330E11A3DEAB00C166E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = TestTest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15127EAB11A3D4A20064280B /* Build configuration list for PBXProject "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15127EA911A3D4A20064280B /* Debug */,
+				15127EAA11A3D4A20064280B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15127EDA11A3D51A0064280B /* Build configuration list for PBXNativeTarget "Tests_PlatformCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15127ED811A3D51A0064280B /* Debug */,
+				15127ED911A3D51A0064280B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15B7331E11A3DED000C166E2 /* Build configuration list for PBXNativeTarget "TestTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15B7330D11A3DEAB00C166E2 /* Debug */,
+				15B7330E11A3DEAB00C166E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 15127EA811A3D4A20064280B /* Project object */;
+}

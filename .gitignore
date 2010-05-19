@@ -3,4 +3,5 @@
 *.mode2v3
 *.perspectivev3
 *.pbxuser
-/Tests
+/Tests/build
+
