@@ -10,6 +10,7 @@
 #include "ILApp.h"
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 ILApp* ILApp::_current = NULL;
 
@@ -25,6 +26,8 @@ ILApp* ILApp::current() {
 }
 
 int ILApp::end(int result) {
+	fflush(stdout);
+	fflush(stderr);
 	_exit(result);
 	return result;
 }
