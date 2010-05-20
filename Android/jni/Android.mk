@@ -17,14 +17,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE    := PlatformCore-Android-Shared
-LOCAL_SRC_FILES := Sources/ILData.cpp Sources/ILHash.cpp Sources/ILLinkedList.cpp Sources/ILList.cpp Sources/ILMap.cpp Sources/ILMessage.cpp Sources/ILMessageHub.cpp Sources/ILNumber.cpp Sources/ILObject.cpp Sources/ILReleasePool.cpp Sources/ILReleasePoolDelegate.cpp Sources/ILRunLoop.cpp Sources/ILSet.cpp Sources/ILSource.cpp Sources/ILString.cpp Sources/ILThreadTarget.cpp Sources/ILTime.cpp Sources/ILTimer.cpp
+LOCAL_SRC_FILES := $(patsubst $(LOCAL_PATH)/%,%,$(wildcard $(LOCAL_PATH)/Sources/IL*.cpp))
 
 include $(BUILD_SHARED_LIBRARY)
 
-
-# include $(CLEAR_VARS)
-# 
-# LOCAL_MODULE    := PlatformCore-Android-Static
-# LOCAL_SRC_FILES := Sources/ILData.cpp Sources/ILHash.cpp Sources/ILLinkedList.cpp Sources/ILList.cpp Sources/ILMap.cpp Sources/ILMessage.cpp Sources/ILMessageHub.cpp Sources/ILNumber.cpp Sources/ILObject.cpp Sources/ILReleasePool.cpp Sources/ILReleasePoolDelegate.cpp Sources/ILRunLoop.cpp Sources/ILSet.cpp Sources/ILSource.cpp Sources/ILString.cpp Sources/ILThreadTarget.cpp Sources/ILTime.cpp Sources/ILTimer.cpp
-# 
-# include $(BUILD_STATIC_LIBRARY)
