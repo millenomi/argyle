@@ -1,0 +1,9 @@
+755 root root . usr  /
+755 root root . usr/include  /
+755 root root . usr/lib  /
+755 root root . usr/share  /
+755 root root . usr/share/doc  /
+755 root root . usr/share/doc/infinitelabs-platform-core-dev  /
+644 root root . usr/share/doc/infinitelabs-platform-core-dev/changelog.gz debian/infinitelabs-platform-core-dev/usr/share/doc/infinitelabs-platform-core-dev/changelog.gz
+644 root root . usr/share/doc/infinitelabs-platform-core-dev/copyright debian/infinitelabs-platform-core-dev/usr/share/doc/infinitelabs-platform-core-dev/copyright
+644 root root . usr/share/doc/infinitelabs-platform-core-dev/README.Debian debian/infinitelabs-platform-core-dev/usr/share/doc/infinitelabs-platform-core-dev/README.Debian

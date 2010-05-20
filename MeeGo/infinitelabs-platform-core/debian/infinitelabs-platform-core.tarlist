@@ -1,0 +1,11 @@
+755 root root . usr  /
+755 root root . usr/lib  /
+644 root root . usr/lib/libinfinitelabs-platform-core.so debian/infinitelabs-platform-core/usr/lib/libinfinitelabs-platform-core.so
+644 root root . usr/lib/libinfinitelabs-platform-core.so.1 debian/infinitelabs-platform-core/usr/lib/libinfinitelabs-platform-core.so.1
+644 root root . usr/lib/libinfinitelabs-platform-core.so.1.0 debian/infinitelabs-platform-core/usr/lib/libinfinitelabs-platform-core.so.1.0
+644 root root . usr/lib/libinfinitelabs-platform-core.so.1.0.0 debian/infinitelabs-platform-core/usr/lib/libinfinitelabs-platform-core.so.1.0.0
+755 root root . usr/share  /
+755 root root . usr/share/doc  /
+755 root root . usr/share/doc/infinitelabs-platform-core  /
+644 root root . usr/share/doc/infinitelabs-platform-core/changelog.gz debian/infinitelabs-platform-core/usr/share/doc/infinitelabs-platform-core/changelog.gz
+644 root root . usr/share/doc/infinitelabs-platform-core/copyright debian/infinitelabs-platform-core/usr/share/doc/infinitelabs-platform-core/copyright

@@ -1,0 +1,11 @@
+Package: infinitelabs-platform-core
+Version: 0.1
+Architecture: armel
+Maintainer: unknown <millenomi@unknown>
+Installed-Size: 112
+Depends: libc6 (>= 2.5.0-1), libgcc1 (>= 1:4.2.1), libstdc++6 (>= 4.2.1)
+Section: libs
+Priority: extra
+Homepage: <insert the upstream URL, if relevant>
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
