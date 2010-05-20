@@ -22,6 +22,7 @@ LOCAL_SRC_FILES += $(patsubst $(LOCAL_PATH)/%,%,$(wildcard $(LOCAL_PATH)/Sources
 LOCAL_SRC_FILES += $(patsubst $(LOCAL_PATH)/%,%,$(wildcard $(LOCAL_PATH)/*.cpp))
 
 LOCAL_CXXFLAGS := -I$(LOCAL_PATH)/Sources -I$(LOCAL_PATH)/Sources/Tests
+LOCAL_LDLIBS := -llog
 
 include $(BUILD_SHARED_LIBRARY)
 

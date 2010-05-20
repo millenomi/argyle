@@ -10,6 +10,8 @@
 
 #include "net_infinite_labs_platform_core_TestRunner.h"
 
+#include <android/log.h>
+
 #include "Argyle.h"
 #include "ILTesting.h"
 #include "ILPlatformCoreTests.h"
@@ -27,6 +29,8 @@ public:
 	}
 	
 	virtual void didBeginTestCase(TestCase* c, const char* what) {
+		__android_log_print(ANDROID_LOG_INFO, "PlatformCore-Tests", "== == = Starting tests for %s (%s)", c->name(), what);
+		
 		jclass selfClass = _env->GetObjectClass(_self);
 		if (!selfClass)
 			return;
@@ -42,6 +46,8 @@ public:
 	}
 	
 	virtual void passed(TestCase* c, const char* description) {
+		__android_log_print(ANDROID_LOG_INFO, "PlatformCore-Tests", " ok: %s", description);
+
 		jclass selfClass = _env->GetObjectClass(_self);
 		if (!selfClass)
 			return;
@@ -56,6 +62,8 @@ public:
 	}
 	
 	virtual void failed(TestCase* c, const char* description) {
+		__android_log_print(ANDROID_LOG_INFO, "PlatformCore-Tests", "! FAILED: %s", description);
+		
 		jclass selfClass = _env->GetObjectClass(_self);
 		if (!selfClass)
 			return;
