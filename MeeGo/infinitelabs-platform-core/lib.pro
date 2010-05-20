@@ -1,4 +1,4 @@
-ILABS_PLATFORM_CORE_DIR = /Users/millenomi/Developer/Multiverse/Argyle
+ILABS_PLATFORM_CORE_DIR = ../..
 
 TARGET      = infinitelabs-platform-core
 HEADERS     +=  $$ILABS_PLATFORM_CORE_DIR/IL*.h
@@ -22,7 +22,7 @@ DEPENDPATH  +=
 VPATH       += $$ILABS_PLATFORM_CORE_DIR
 CONFIG      -= qt
 CONFIG      += debug
-CONFIG      += staticlib dll
+CONFIG      += staticlib
 #QTMODULES#
 
 INSTALLS    += target
