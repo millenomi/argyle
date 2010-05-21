@@ -1,3 +1,5 @@
 /jni/Sources
 /libs
-
+/bin
+/gen
+local.properties
