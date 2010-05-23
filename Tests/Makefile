@@ -1,4 +1,3 @@
-BUILD_DIRECTORY = build-Makefile
 
 # for now, GCC is required to build Platform Core.
 
@@ -12,33 +11,23 @@ ifeq ($(INTERMEDIATE_PRODUCTS_DIR),)
 	$(error Intermediate products dir is empty; use '.' for the sources directory.)
 endif
 
-ARGYLE = ..
-
-ARGYLE_SOURCES = $(wildcard $(ARGYLE)/IL*.cpp)
-ARGYLE_SOURCE_SYMLINKS = $(patsubst $(ARGYLE)/%.cpp,%.cpp,$(ARGYLE_SOURCES))
-ARGYLE_HEADER_SYMLINKS = $(patsubst $(ARGYLE)/%.cpp,%.h,$(ARGYLE_SOURCES)) Argyle.h
-
-SOURCES = $(wildcard *.cpp)
-OBJECT_FILES = $(addprefix $(INTERMEDIATE_PRODUCTS_DIR)/,$(patsubst %.cpp,%.o,$(SOURCES))) $(addprefix $(INTERMEDIATE_PRODUCTS_DIR)/,$(patsubst %.cpp,%.o,$(ARGYLE_SOURCE_SYMLINKS)))
+SOURCES = $(wildcard IL*.cpp)
+OBJECT_FILES = $(addprefix $(INTERMEDIATE_PRODUCTS_DIR)/,$(patsubst %.cpp,%.o,$(SOURCES)))
 
 CXX = g++
 AR = ar
 RANLIB = ranlib
 PLATFORM_STATIC_LIB_SUFFIX = .a
 PLATFORM_LIB_PREFIX = lib
+PLATFORM_PTHREAD_LINK_FLAG = -lpthread
+PRODUCT_NAME = PlatformCore-$(PLATFORM_NAME)
 
 PLATFORM = $(shell uname).mk
 PLATFORM_NAME = $(patsubst %.mk,%,$(PLATFORM))
-include $(PLATFORM)
-
-PRODUCT_NAME = Tests_PlatformCore-$(PLATFORM_NAME)
+include ../$(PLATFORM)
 
 CXXFLAGS = -g -Os $(PLATFORM_CXXFLAGS)
-LDFLAGS = -lpthread $(PLATFORM_LDFLAGS)
-
-
-STATIC_LIBRARY = $(BUILT_PRODUCTS_DIR)/$(PLATFORM_LIB_PREFIX)$(PRODUCT_NAME)$(PLATFORM_STATIC_LIB_SUFFIX)
-DYNAMIC_LIBRARY = $(BUILT_PRODUCTS_DIR)/$(PLATFORM_LIB_PREFIX)$(PRODUCT_NAME)$(PLATFORM_DYLIB_SUFFIX)
+LDFLAGS = $(PLATFORM_PTHREAD_LINK_FLAG) $(PLATFORM_LDFLAGS)
 
 ifeq ($(PLATFORM_DYLIB_SUFFIX),)
 ifneq ($(PLATFORM_SUPPORTS_DYLIBS),NO)
@@ -47,36 +36,21 @@ PLATFORM_SUPPORTS_DYLIBS := NO
 endif
 endif
 
-ifeq ($(PLATFORM_SUPPORTS_DYLIBS),NO)
-LIBRARIES_TO_BUILD = $(STATIC_LIBRARY)
-else
-LIBRARIES_TO_BUILD = $(STATIC_LIBRARY) $(DYNAMIC_LIBRARY)
-endif
+ARGYLE = ..
 
-all: $(ARGYLE_SOURCE_SYMLINKS) $(ARGYLE_HEADER_SYMLINKS) $(OBJECT_FILES) $(LIBRARIES_TO_BUILD)
-.PHONY: clean
+ARGYLE_SOURCES = $(wildcard $(ARGYLE)/IL*.cpp)
 
-$(INTERMEDIATE_PRODUCTS_DIR)/%.o: %.cpp $(ARGYLE_SOURCE_SYMLINKS) $(ARGYLE_HEADER_SYMLINKS)
-	$(CXX) $(CXXFLAGS) -c "$<" -o "$@"
+main-TestTest-$(PLATFORM_NAME): $(ARGYLE_SOURCES) $(SOURCES) Executable/main-TestTest.cpp
+	$(CXX) -I$(ARGYLE) -I. $(ARGYLE_SOURCES) $(SOURCES) Executable/main-TestTest.cpp -o "$@"
 
-clean:
-	-rm $(INTERMEDIATE_PRODUCTS_DIR)/*.o
-	-rm $(BUILT_PRODUCTS_DIR)/*.a
-	-rmdir .libs
-	-bash CleanSymlinks.sh
-ifneq ($(PLATFORM_SUPPORTS_DYLIBS),NO)
-	-test x$(PLATFORM_DYLIB_SUFFIX) != x && rm $(BUILT_PRODUCTS_DIR)/*$(PLATFORM_DYLIB_SUFFIX)
-endif
+clean-main-TestTest-$(PLATFORM_NAME):
+	-rm "main-TestTest-$(PLATFORM_NAME)"
 
-%.cpp: $(ARGYLE)/%.cpp
-	ln -s "$<" "$@"
+run-main-TestTest-$(PLATFORM_NAME): main-TestTest-$(PLATFORM_NAME)
+	"./$<"
 
-%.h: $(ARGYLE)/%.h
-	ln -s "$<" "$@"
+all: main-TestTest-$(PLATFORM_NAME)
+clean: clean-main-TestTest-$(PLATFORM_NAME)
+run: run-main-TestTest-$(PLATFORM_NAME)
 
-$(STATIC_LIBRARY): $(OBJECT_FILES) $(ARGYLE_SOURCE_SYMLINKS) $(ARGYLE_HEADER_SYMLINKS)
-	$(AR) rcs "$@" $(OBJECT_FILES)
-	$(RANLIB) "$@"
-
-$(DYNAMIC_LIBRARY): $(OBJECT_FILES) $(ARGYLE_SOURCE_SYMLINKS) $(ARGYLE_HEADER_SYMLINKS)
-	$(CXX) -shared $(CXXFLAGS) $(LDFLAGS) $(OBJECT_FILES) -shared -o "$@"
+.PHONY: all clean clean-main-TestTest-$(PLATFORM_NAME) run run-main-TestTest-$(PLATFORM_NAME)
