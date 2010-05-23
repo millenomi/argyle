@@ -26,12 +26,12 @@
 /* Begin PBXLegacyTarget section */
 		D28A88AD04BDD90700651E21 /* JNI */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "APP=PlatformCoreTests $(ACTION)";
+			buildArgumentsString = "$(ACTION)";
 			buildConfigurationList = 1DEB918F08733D9F0010E9CD /* Build configuration list for PBXLegacyTarget "JNI" */;
 			buildPhases = (
 			);
-			buildToolPath = /usr/bin/make;
-			buildWorkingDirectory = "$(ANDROID_NDK)";
+			buildToolPath = "/Users/millenomi/Developer/Tools/Android/NDK-r4/ndk-build";
+			buildWorkingDirectory = "$(SRCROOT)";
 			dependencies = (
 			);
 			name = JNI;
@@ -59,6 +59,7 @@
 		1DEB919008733D9F0010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ANDROID_NDK = "/Users/millenomi/Developer/Tools/Android/NDK-r4";
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
