@@ -12,7 +12,7 @@ ifeq ($(INTERMEDIATE_PRODUCTS_DIR),)
 endif
 
 SOURCES = $(wildcard IL*.cpp)
-OBJECT_FILES = $(addprefix $(INTERMEDIATE_PRODUCTS_DIR)/,$(patsubst %.cpp,%.o,$(SOURCES)))
+# OBJECT_FILES = $(addprefix $(INTERMEDIATE_PRODUCTS_DIR)/,$(patsubst %.cpp,%.o,$(SOURCES)))
 
 CXX = g++
 AR = ar
@@ -24,7 +24,9 @@ PRODUCT_NAME = PlatformCore-$(PLATFORM_NAME)
 
 PLATFORM = $(shell uname).mk
 PLATFORM_NAME = $(patsubst %.mk,%,$(PLATFORM))
+ifneq ($(PLATFORM),None)
 include ../$(PLATFORM)
+endif
 
 CXXFLAGS = -g -Os $(PLATFORM_CXXFLAGS)
 LDFLAGS = $(PLATFORM_PTHREAD_LINK_FLAG) $(PLATFORM_LDFLAGS)
@@ -40,17 +42,17 @@ ARGYLE = ..
 
 ARGYLE_SOURCES = $(wildcard $(ARGYLE)/IL*.cpp)
 
-main-TestTest-$(PLATFORM_NAME): $(ARGYLE_SOURCES) $(SOURCES) Executable/main-TestTest.cpp
-	$(CXX) -I$(ARGYLE) -I. $(ARGYLE_SOURCES) $(SOURCES) Executable/main-TestTest.cpp -o "$@"
+TestTest-$(PLATFORM_NAME): $(ARGYLE_SOURCES) $(SOURCES) Executable/main-TestTest.cpp
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -I$(ARGYLE) -I. $(ARGYLE_SOURCES) $(SOURCES) Executable/main-TestTest.cpp -o "$@"
 
-clean-main-TestTest-$(PLATFORM_NAME):
-	-rm "main-TestTest-$(PLATFORM_NAME)"
+clean-TestTest-$(PLATFORM_NAME):
+	-rm "TestTest-$(PLATFORM_NAME)"
 
-run-main-TestTest-$(PLATFORM_NAME): main-TestTest-$(PLATFORM_NAME)
+run-TestTest-$(PLATFORM_NAME): TestTest-$(PLATFORM_NAME)
 	"./$<"
 
-all: main-TestTest-$(PLATFORM_NAME)
-clean: clean-main-TestTest-$(PLATFORM_NAME)
-run: run-main-TestTest-$(PLATFORM_NAME)
+all: TestTest-$(PLATFORM_NAME)
+clean: clean-TestTest-$(PLATFORM_NAME)
+run: run-TestTest-$(PLATFORM_NAME)
 
-.PHONY: all clean clean-main-TestTest-$(PLATFORM_NAME) run run-main-TestTest-$(PLATFORM_NAME)
+.PHONY: all clean clean-TestTest-$(PLATFORM_NAME) run run-TestTest-$(PLATFORM_NAME)
