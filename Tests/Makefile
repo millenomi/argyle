@@ -54,5 +54,6 @@ run-TestTest-$(PLATFORM_NAME): TestTest-$(PLATFORM_NAME)
 all: TestTest-$(PLATFORM_NAME)
 clean: clean-TestTest-$(PLATFORM_NAME)
 run: run-TestTest-$(PLATFORM_NAME)
+test: run
 
-.PHONY: all clean clean-TestTest-$(PLATFORM_NAME) run run-TestTest-$(PLATFORM_NAME)
+.PHONY: all test clean clean-TestTest-$(PLATFORM_NAME) run run-TestTest-$(PLATFORM_NAME)
